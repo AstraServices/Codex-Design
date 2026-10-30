@@ -1,0 +1,12 @@
+{
+  "name": "HIGHLIGHT HOUSE / Roblox Highlight",
+  "description": "Studded house Model · one Highlight (fill + outline) · baked into GLB · DoorOpen",
+  "module": "highlight-house.js",
+  "parameters": { "fill": "#ff0000", "fillTransparency": 0.5, "outline": "#ffffff", "roof": "#c0392b" },
+  "controls": {
+    "fill": { "label": "FillColor", "type": "color" },
+    "fillTransparency": { "label": "FillTransparency (1 = off)", "type": "number", "min": 0, "max": 1, "step": 0.05 },
+    "outline": { "label": "OutlineColor", "type": "color" },
+    "roof": { "label": "Roof color", "type": "color" }
+  }
+}

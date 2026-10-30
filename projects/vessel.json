@@ -1,0 +1,10 @@
+{
+  "name": "FORMA / Machined vessel",
+  "description": "Lathe profile, boolean ports, PBR finish · assembly animation",
+  "module": "vessel.js",
+  "parameters": { "color": "#b6b8c5", "metalness": 0.8 },
+  "controls": {
+    "color": { "label": "Anodized finish", "type": "color" },
+    "metalness": { "label": "Metalness", "type": "number", "min": 0, "max": 1, "step": 0.05 }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "CUBE PET / simulator pet",
+  "description": "Rounded cube body · big two-highlight eyes · species ears · stub legs · designed fur gradients · static (no animation)",
+  "module": "cube-pet.js",
+  "lighting": "studio",
+  "parameters": { "size": 1, "species": "cat", "fur": "#f2a33a", "furShade": "#c66a1c", "furLight": "#ffd27a", "belly": "#fff4dc", "innerEar": "#ffb3a8", "eye": "#7a3a12" },
+  "controls": {
+    "fur": { "label": "Fur", "type": "color" }, "furShade": { "label": "Fur shade", "type": "color" }, "furLight": { "label": "Fur light", "type": "color" },
+    "belly": { "label": "Belly / face", "type": "color" }, "innerEar": { "label": "Inner ear", "type": "color" }, "eye": { "label": "Iris", "type": "color" },
+    "size": { "label": "Size (m)", "type": "number", "min": 0.5, "max": 2, "step": 0.1 }
+  },
+  "gfx": { "preset": "icon", "title": "Cube Cat", "tag": "PET" }
+}

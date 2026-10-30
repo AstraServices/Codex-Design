@@ -1,0 +1,12 @@
+{
+  "name": "TOPOLOGY BRACKET / SIMP optimization",
+  "description": "Structural topology optimization · FE + optimality criteria · load paths extruded into a lightweight part",
+  "module": "topology-bracket.js",
+  "lighting": "studio",
+  "parameters": { "volume": 0.35, "loadCase": "cantilever", "color": "#9aa3ad" },
+  "controls": {
+    "volume": { "label": "Material volume", "type": "number", "min": 0.2, "max": 0.6, "step": 0.05 },
+    "color": { "label": "Metal color", "type": "color" }
+  },
+  "gfx": { "preset": "card", "title": "Bracket", "tag": "ENGINEERING", "footer": "SIMP · 35% material" }
+}

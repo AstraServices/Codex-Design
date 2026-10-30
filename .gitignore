@@ -1,0 +1,8 @@
+node_modules/
+exports/
+test-results/
+playwright-report/
+*.log
+install.json
+work/
+outputs/

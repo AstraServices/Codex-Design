@@ -1,0 +1,9 @@
+{
+  "name": "LOOK GALLERY / surface looks + designed gradients",
+  "description": "custom look objects + gradients designed per object (no presets) · no highlight, no animation",
+  "module": "look-gallery.js",
+  "lighting": "studio",
+  "parameters": {},
+  "controls": {},
+  "gfx": { "preset": "cover", "title": "Look Gallery", "tag": "SURFACES", "subtitle": "5 looks · gradients designed per object" }
+}

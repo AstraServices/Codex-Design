@@ -1,0 +1,90 @@
+{
+  "about": "Reference catalog for Train/. Codex Design reads this with docs/TRAINING.md. Files stay where the user put them; this file sorts them. Every folder has a TRAIN.md. Categories: stud, voxel-stud, gradient, gfx, simulator-style, texture.",
+  "folders": {
+    "StudTrain": {
+      "category": "stud",
+      "use": "Canonical stud textures. 256x256 alpha overlays, 4x4 studs, dark+white bevel pixels over transparent. Library copies: assets/library/studtrain/ (style 'train' and 'train-mixed')."
+    },
+    "GradientTrain/Examples": {
+      "category": "gradient",
+      "use": "Ground truth for the gradient + vignette stud look: 32 *_diff.png renders (transparent, 512x512) and 4 in-scene screenshots (image*.png)."
+    },
+    "GfxTrain": {
+      "category": "gfx",
+      "use": "Third-party product cards (VX D2C Stud Street Props), studied for mood only; Codex layouts are original (see TRAIN.md)."
+    },
+    "StudveGradientVideo": {
+      "category": "voxel-stud + gradient",
+      "use": "Stud Nature Pack 100 Assets walkthrough (62 s). 20 sharp stills in frames/, measurements in TRAIN.md."
+    },
+    "TextureTrainSenTrainleBurada": {
+      "category": "texture",
+      "use": "Rules for AI-written PBR materials (TRAIN.md). Put texture reference photos here; recipes live in textures/."
+    },
+    "TopologyTrain": {
+      "category": "topology",
+      "use": "No images: SIMP + CNN background and smart quad topology rules in TRAIN.md."
+    }
+  },
+  "StudGradientModelKarisik": {
+    "note": "Mixed folder sorted by Codex. The *_diff.png files are byte-identical copies of GradientTrain/Examples.",
+    "gradient": [
+      "1rock1_diff.png",
+      "2rock1_diff.png",
+      "3rock1_diff.png",
+      "4rock1_diff.png",
+      "5shrub1_diff.png",
+      "6tree1_diff.png",
+      "7tree1_diff.png",
+      "8bone1_diff.png",
+      "9bone1_diff.png",
+      "10ribCage1_diff.png",
+      "11skull1_diff.png",
+      "12cactus1_diff.png",
+      "13cactus1_diff.png",
+      "14cactus1_diff.png",
+      "15cactus1_diff.png",
+      "16shrub1_diff.png",
+      "17pebbles1_diff.png",
+      "18rock1_diff.png",
+      "19log1_diff.png",
+      "20grass21_diff.png",
+      "21grass1_diff.png",
+      "22branchedTree1_diff.png",
+      "23pineTree1_diff.png",
+      "24pineTree21_diff.png",
+      "25pineTree31_diff.png",
+      "26flowerPatch1_diff.png",
+      "27flowers1_diff.png",
+      "28campfire1_diff.png",
+      "29deadTrunk1_diff.png",
+      "30deadTrunk21_diff.png",
+      "31bush1_diff.png",
+      "32pyramid1_diff.png"
+    ],
+    "voxel-stud": {
+      "141.png": "Voxel nature set: round voxel trees, pine, bushes, flower boxes. Per-voxel shading, saturated greens, dark grid floor.",
+      "45.png": "Voxel guns (sniper, rifles) on a blue stud baseplate. Elemental color variants of one silhouette.",
+      "547.png": "Voxel pets with neon/emissive accents on a dark checker floor.",
+      "attachments_screenshot-2026-02-22-134554-png.png": "Block pets: mystery-box cubes (? faces), wings, halos; stud-cube bodies.",
+      "image.png": "Voxel city: buildings, cars, taxi, police car, bench. Low-poly stepped forms, window grids, dark grid floor."
+    },
+    "simulator-style": {
+      "23525.png": "Elemental swords row: same blade silhouette, tiered colors, emissive tips and particles.",
+      "5985.png": "Sword tier strip on dark navy: color ladder of one model.",
+      "343.png": "2000x2000 icon sheet of ~300 pickaxe variants on white: shape grammar + color tiers for item icons.",
+      "5775.png": "Pickaxe tier strip on dark navy.",
+      "75474.png": "Pickaxe tier strip on dark navy.",
+      "769.png": "Pickaxe/axe tier strip, ornate late-tier heads.",
+      "8679.png": "Hammer/axe tier strip.",
+      "879.png": "Ornate axes/hammers tier strip.",
+      "543256.png": "Simulator eggs (smooth, gradient, crystals, wings) on purple sky: egg design language.",
+      "78568.png": "Cube pets (ice, gold, leopard, tiger) + egg on dark purple: pet showcase.",
+      "8658.png": "Cube cat pets with glow tiers + leafy egg: rarity glow language.",
+      "9789.png": "Cube pets with electric/ice/gold effects + peach egg.",
+      "865.png": "Pet sheet on green stud background: cute block animals (cats, bunny, penguin, snowman).",
+      "7457.png": "Revolver pack on sky gradient: GFX showcase of weapon variants.",
+      "5435.png": "Fishing Rod Pack cover: long thin props lined up, title bottom-right."
+    }
+  }
+}
