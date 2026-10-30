@@ -6,16 +6,13 @@ const ffmpegPath = process.env.FFMPEG || (await import('ffmpeg-static').then(m =
 import { watch } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { checkForUpdate, localVersion } from './scripts/update.mjs';
+import { checkForUpdate, applyUpdate, localVersion } from './scripts/update.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.PORT || 4173);
 const clients = new Set();
-// On start: compare version.txt with GitHub; after an update, restart this server with the new files.
-if (await checkForUpdate()) {
-  spawn(process.execPath, process.argv.slice(1), { stdio: 'inherit', env: { ...process.env, CODEX_NO_UPDATE: '1' } }).on('exit', code => process.exit(code ?? 0));
-  await new Promise(() => {});
-}
+// On start: compare version.txt with GitHub. The page shows the result and asks before installing.
+let updateStatus = checkForUpdate();
 const version = await localVersion();
 const mime = { '.html':'text/html', '.js':'text/javascript', '.mjs':'text/javascript', '.json':'application/json', '.css':'text/css', '.svg':'image/svg+xml', '.png':'image/png', '.glb':'model/gltf-binary', '.gltf':'model/gltf+json', '.webp':'image/webp', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.gif':'image/gif', '.lua':'text/plain', '.txt':'text/plain', '.csv':'text/csv' };
 const slugOK = s => /^[a-z][a-z0-9-]{0,63}$/.test(s);
@@ -35,6 +32,15 @@ const server = http.createServer(async (req, res) => {
     if (pathname === '/api/events' && req.method === 'GET') {
       res.writeHead(200, {'Content-Type':'text/event-stream','Cache-Control':'no-cache','Connection':'keep-alive'});
       res.write(': connected\n\n'); clients.add(res); req.on('close',()=>clients.delete(res)); return;
+    }
+    // GET → {local, remote, available}; POST installs it, then the server restarts with the new files.
+    if (pathname === '/api/update' && req.method === 'GET') return send(res, 200, await updateStatus);
+    if (pathname === '/api/update' && req.method === 'POST') {
+      if (!await applyUpdate()) { updateStatus = checkForUpdate(); return send(res, 500, { error: 'Update failed; see the server console.' }); }
+      send(res, 200, { ok: true, restarting: true });
+      server.close(); for (const c of clients) c.end();
+      spawn(process.execPath, process.argv.slice(1), { stdio: 'inherit' }).on('exit', code => process.exit(code ?? 0));
+      return;
     }
     if (pathname === '/api/health') return send(res,200,{ok:true, engine:'Three.js', version, root});
     if (pathname === '/api/projects' && req.method === 'GET') {

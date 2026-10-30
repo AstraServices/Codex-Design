@@ -65,5 +65,9 @@
       <div class="gfx-actions"><button type="button" id="vid-render" class="primary">● Render video</button></div><p class="fine" id="vid-status"></p></div></details>
     </div><div class="gfx-preview"><img id="gfx-image" alt="GFX preview"><p class="fine" id="gfx-live-note">Live preview updates as you edit.</p></div></div>
     <div class="gfx-actions"><button type="button" id="gfx-all">Render all presets</button><button type="button" id="gfx-render" class="primary">Render full size</button><button type="button" id="gfx-download" disabled>↓ Download PNG</button><button value="close">Close</button></div></form></dialog>
+  <dialog id="update-dialog" class="gfx-dialog update-dialog"><form method="dialog" class="gfx-form"><div class="section-label">UPDATE AVAILABLE <span id="update-versions"></span></div>
+    <p id="update-msg" class="fine">A new version of Codex Design is on GitHub. Download and install it now? Your projects, exports and settings are kept.</p>
+    <div class="gfx-actions"><button type="button" id="update-later">Later</button><button type="button" id="update-go" class="primary">↓ Download update</button></div></form></dialog>
   <script type="module" src="/src/app.js"></script>
+  <script type="module" src="/src/app-update.js"></script>
 </body></html>

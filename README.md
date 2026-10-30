@@ -6,7 +6,7 @@ Blender kullanmadan, Three.js ile koddan **3D model, rig ve animasyon** üreten 
 
 Yeni bir bilgisayarda `install.bat` dosyasını çalıştır: atölyeyi GitHub'dan indirir, `npm install` yapar, C:\, D:\ … sürücülerinde Claude Code, Codex, Antigravity ve `.agents` klasörlerini arar ve `codex-design-3d` skill'inin hangisine kurulacağını sorar.
 
-Sürüm `version.txt` dosyasındadır. `npm.cmd start` her açılışta bu dosyayı GitHub'daki ile karşılaştırır; GitHub'daki daha yeniyse güncellemeyi geçici klasöre indirir (Downloads'a değil), dosyaları yeniler, `projects/`, `exports/` ve ayarları korur, kurulu skill'leri günceller ve sunucuyu yeniden başlatır. Git klonlarında (geliştirme kopyası) ve `CODEX_NO_UPDATE=1` ile atlanır. Yeni sürüm yayınlamak için `version.txt` değerini artırıp push et.
+Sürüm `version.txt` dosyasındadır. `npm.cmd start` her açılışta bu dosyayı GitHub'daki ile karşılaştırır; GitHub'daki daha yeniyse atölye sayfasında "Update available" penceresi çıkar ve "Download update" denirse güncellemeyi geçici klasöre indirir (Downloads'a değil), dosyaları yeniler, `projects/`, `exports/` ve ayarları korur, kurulu skill'leri günceller ve sunucuyu yeniden başlatır. Git klonlarında (geliştirme kopyası) ve `CODEX_NO_UPDATE=1` ile atlanır. Yeni sürüm yayınlamak için `version.txt` değerini artırıp push et.
 
 ## Çalıştırma
 

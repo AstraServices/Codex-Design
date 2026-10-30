@@ -129,3 +129,4 @@
 .vid-clips label{display:flex!important;gap:4px;align-items:center;font-size:10px;border:1px solid #3a4139;border-radius:6px;padding:3px 6px}
 @media(max-width:860px){.gfx-layout{grid-template-columns:1fr}}
 #lod-result{white-space:pre-line}
+.update-dialog{width:min(440px,calc(100vw - 32px))}

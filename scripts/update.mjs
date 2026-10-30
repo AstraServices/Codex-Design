@@ -1,6 +1,6 @@
-// Auto update: compares version.txt with the copy on GitHub and, when GitHub is newer, downloads the main
-// branch ZIP to the OS temp folder (never Downloads), copies it over this install and keeps user data.
-// Skipped for git checkouts (development copies) and when CODEX_NO_UPDATE=1.
+// Update check: compares version.txt with the copy on GitHub. The workshop page asks the user before
+// applyUpdate() downloads the main branch ZIP to the OS temp folder (never Downloads), copies it over this
+// install and keeps user data. Skipped for git checkouts (development copies) and when CODEX_NO_UPDATE=1.
 import { readFile, writeFile, mkdir, rm, cp, readdir, stat } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
@@ -31,15 +31,25 @@ async function refreshSkills() {
   for (const dir of info.skills || []) { await mkdir(dir, { recursive: true }); await writeFile(path.join(dir, 'SKILL.md'), skill); }
 }
 
-// Returns true when files were updated (the caller restarts).
+// Returns {local, remote, available}; never downloads anything.
 export async function checkForUpdate({ log = console.log } = {}) {
-  if (process.env.CODEX_NO_UPDATE === '1' || await exists(path.join(root, '.git'))) return false;
   const local = await localVersion();
-  let remote;
-  try { const r = await fetch(RAW, { cache: 'no-store', signal: AbortSignal.timeout(8000) }); if (!r.ok) throw new Error(r.status); remote = (await r.text()).trim(); }
-  catch (e) { log(`[update] Version check failed (${e.message}); continuing with ${local}.`); return false; }
-  if (!newer(remote, local)) { log(`[update] Up to date (${local}).`); return false; }
-  log(`[update] New version ${remote} found (installed ${local}). Downloading...`);
+  if (process.env.CODEX_NO_UPDATE === '1' || await exists(path.join(root, '.git'))) return { local, remote: null, available: false, skipped: true };
+  try {
+    const r = await fetch(RAW, { cache: 'no-store', signal: AbortSignal.timeout(8000) });
+    if (!r.ok) throw new Error(r.status);
+    const remote = (await r.text()).trim();
+    const available = newer(remote, local);
+    log(available ? `[update] New version ${remote} available (installed ${local}).` : `[update] Up to date (${local}).`);
+    return { local, remote, available };
+  } catch (e) { log(`[update] Version check failed (${e.message}).`); return { local, remote: null, available: false }; }
+}
+
+// Downloads and installs the GitHub version. Returns true when files were updated (the caller restarts).
+export async function applyUpdate({ log = console.log } = {}) {
+  const { local, remote, available } = await checkForUpdate({ log });
+  if (!available) return false;
+  log(`[update] Downloading ${remote}...`);
   const work = path.join(tmpdir(), `codex-design-update-${Date.now()}`);
   try {
     await mkdir(work, { recursive: true });
@@ -64,4 +74,5 @@ export async function checkForUpdate({ log = console.log } = {}) {
   finally { await rm(work, { recursive: true, force: true }).catch(() => {}); }
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await checkForUpdate();
+// npm run update: install the newer version without the page prompt.
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await applyUpdate();
