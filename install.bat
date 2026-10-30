@@ -1,7 +1,7 @@
 @echo off
 rem Codex Design 3D kurulumu: atolyeyi GitHub'dan indirir, Claude / Codex / Antigravity skill klasorlerini
-rem C:\ D:\ ... suruculerinde arar ve secilenlere codex-design-3d skill'ini kurar.
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$f='%~f0'; iex ((Get-Content -LiteralPath $f -Raw -Encoding UTF8) -split '#PS_BEGIN\r?\n',2)[1]"
+rem C:\ D:\ ... suruculerinde arar ve bulunanlarin hepsine codex-design-3d skill'ini kurar.
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$env:CODEX_DEST='%~1'; $f='%~f0'; iex ((Get-Content -LiteralPath $f -Raw -Encoding UTF8) -split '#PS_BEGIN\r?\n',2)[1]"
 pause
 exit /b
 #PS_BEGIN
@@ -15,11 +15,10 @@ if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
   return
 }
 
-# 1) Atolye klasoru
-$default = Join-Path $env:USERPROFILE 'CodexDesign'
-$dest = Read-Host "Atolye nereye kurulsun? (Enter = $default)"
-if ([string]::IsNullOrWhiteSpace($dest)) { $dest = $default }
+# 1) Atolye klasoru: otomatik (ilk arguman ile degistirilebilir: install.bat D:\CodexDesign)
+$dest = if ($env:CODEX_DEST) { $env:CODEX_DEST } else { Join-Path $env:USERPROFILE 'CodexDesign' }
 $dest = [IO.Path]::GetFullPath($dest.Trim('"'))
+Write-Host "Atolye klasoru: $dest"
 
 if (Test-Path (Join-Path $dest 'version.txt')) {
   Write-Host "Mevcut kurulum bulundu: $dest (dosyalar guncellenecek, projelerin korunur)"
@@ -47,14 +46,17 @@ Push-Location $dest
 & npm.cmd install
 Pop-Location
 
-# 2) Skill klasorlerini tum suruculerde ara
+# 2) Skill klasorlerini tum suruculerde otomatik ara ve hepsine kur
 Write-Host ''
-Write-Host 'Claude / Codex / Antigravity klasorleri araniyor...' -ForegroundColor Cyan
+Write-Host 'Claude / Codex / Antigravity klasorleri araniyor (C:\, D:\ ...)...' -ForegroundColor Cyan
+# Rel: klasor varsa bu ajan kurulu sayilir. Skills: SKILL.md'nin gidecegi global skill klasoru.
 $agents = @(
-  @{ Name = 'Claude Code'; Rel = '.claude';               Skills = '.claude\skills' },
-  @{ Name = 'Codex';       Rel = '.codex';                Skills = '.codex\skills' },
-  @{ Name = 'Antigravity'; Rel = '.gemini\antigravity';   Skills = '.gemini\antigravity\skills' },
-  @{ Name = 'Agents (ortak)'; Rel = '.agents';            Skills = '.agents\skills' }
+  @{ Name = 'Claude Code';     Rel = '.claude';                Skills = '.claude\skills' },
+  @{ Name = 'Codex';           Rel = '.codex';                 Skills = '.codex\skills' },
+  @{ Name = 'Antigravity';     Rel = '.gemini\antigravity';    Skills = '.gemini\config\skills' },
+  @{ Name = 'Antigravity CLI'; Rel = '.gemini\antigravity-cli'; Skills = '.gemini\antigravity-cli\skills' },
+  @{ Name = 'Gemini CLI';      Rel = '.gemini\settings.json';  Skills = '.gemini\skills' },
+  @{ Name = 'Agents (ortak)';  Rel = '.agents';                Skills = '.agents\skills' }
 )
 $homes = New-Object System.Collections.Generic.List[string]
 foreach ($drive in Get-PSDrive -PSProvider FileSystem) {
@@ -65,34 +67,15 @@ foreach ($drive in Get-PSDrive -PSProvider FileSystem) {
     Get-ChildItem (Join-Path $r 'Users') -Directory -ErrorAction SilentlyContinue | ForEach-Object { $homes.Add($_.FullName) }
   }
 }
-$found = @()
+$chosen = @()
 foreach ($h in ($homes | Select-Object -Unique)) {
   foreach ($a in $agents) {
     if (Test-Path (Join-Path $h $a.Rel)) {
-      $found += [pscustomobject]@{ Name = $a.Name; Path = (Join-Path (Join-Path $h $a.Skills) 'codex-design-3d') }
+      $chosen += [pscustomobject]@{ Name = $a.Name; Path = (Join-Path (Join-Path $h $a.Skills) 'codex-design-3d') }
     }
   }
 }
-
-if ($found.Count -eq 0) {
-  Write-Host 'Hic Claude / Codex / Antigravity klasoru bulunamadi.' -ForegroundColor Yellow
-  $manual = Read-Host 'Skill klasorunu elle yaz (bos = atla)'
-  if ($manual) { $found = @([pscustomobject]@{ Name = 'Elle'; Path = (Join-Path $manual.Trim('"') 'codex-design-3d') }) }
-}
-$chosen = @()
-if ($found.Count -gt 0) {
-  Write-Host ''
-  for ($i = 0; $i -lt $found.Count; $i++) { Write-Host ("  [{0}] {1,-15} {2}" -f ($i + 1), $found[$i].Name, $found[$i].Path) }
-  Write-Host '  [A] Hepsi'
-  $ans = Read-Host 'Hangisine kurmak istiyorsun? (ornek: 1,3 veya A, bos = atla)'
-  if ($ans -match '^\s*[aA]\s*$') { $chosen = $found }
-  elseif ($ans) {
-    foreach ($n in ($ans -split '[,\s]+' | Where-Object { $_ -match '^\d+$' })) {
-      $idx = [int]$n - 1
-      if ($idx -ge 0 -and $idx -lt $found.Count) { $chosen += $found[$idx] }
-    }
-  }
-}
+if ($chosen.Count -eq 0) { Write-Host 'Hic Claude / Codex / Antigravity klasoru bulunamadi; skill kurulmadi.' -ForegroundColor Yellow }
 
 $skillText = (Get-Content (Join-Path $dest 'skill\SKILL.md') -Raw -Encoding UTF8).Replace('C:/Users/astra/Documents/CodexDesign', $dest.Replace('\', '/'))
 $utf8 = New-Object System.Text.UTF8Encoding $false
