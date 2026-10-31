@@ -5,7 +5,7 @@ description: Create procedural 3D models, bone rigs, weighted meshes and exporta
 
 # Codex Design 3D
 
-The installed workshop is `C:/Users/astra/Documents/CodexDesign`. Read its `AGENTS.md`, `docs/TRAINING.md` (index + behavior rules) and the relevant `Train/<area>/TRAIN.md`, plus `docs/AUTHORING.md`, before authoring an asset; read `docs/RESEARCH.md` only for architectural or format decisions. Respect another workspace explicitly chosen by the user; do not silently move its existing project.
+The installed workshop is `C:/Users/astra/CodexDesign`. Read its `AGENTS.md`, `docs/TRAINING.md` (index + behavior rules) and the relevant `Train/<area>/TRAIN.md`, plus `docs/AUTHORING.md`, before authoring an asset; read `docs/RESEARCH.md` only for architectural or format decisions. Respect another workspace explicitly chosen by the user; do not silently move its existing project.
 
 Create the actual geometry, rig and animation the user requested. Work through the shared engine instead of writing a new viewer/exporter per request. There is no separate model-generation API: Codex writes a model recipe, and Three.js constructs it.
 

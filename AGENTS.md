@@ -98,3 +98,10 @@ This starts `server.mjs` on `http://127.0.0.1:4173` if it is not running, opens 
 ## Roblox delivery updates
 
 Read `docs/ROBLOX.md` for Roblox export/rig/texture/animation work. Prefer the `roblox` ZIP target; use `--target roblox` for standalone GLB/glTF. Do not promise automatic AnimSaves or scale/morph support. Validate external resources and inspect a reimport, then test in Studio when available.
+
+## Shared projects (Codex, Claude, Antigravity)
+
+Codex (`AGENTS.md`), Claude Code (`CLAUDE.md`) and Antigravity (`GEMINI.md`) work in this same folder. Every asset any of them makes lives in `projects/<slug>.js` + `projects/<slug>.json`, so all agents can read, open and continue each other's work.
+- Before starting, list `projects/` and read existing recipes; if the user names a model another agent made, continue that file instead of creating a new one.
+- Never keep project files in an agent-private folder (`.claude/`, `.codex/`, `.gemini/`, `work/`, `outputs/`).
+- Keep the same rules in `AGENTS.md` and `GEMINI.md` when you change one of them.
