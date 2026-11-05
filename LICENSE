@@ -1,40 +1,86 @@
-Codex Design Non-Commercial License
+Codex Design Non-Commercial License (v1.1)
 Copyright (c) 2026 AstraServices. All rights reserved.
 
-"Software" means Codex Design: its source code, studios (3D Workshop, Texture Studio, VFX Studio, GFX Studio),
-SDK, scripts, documentation, training material and bundled libraries authored by AstraServices.
-"Outputs" means anything produced with the Software: models, textures, materials, VFX packages, Luau code,
-images, videos, renders and other exported files.
+This is a source-available license. It is not an open-source license in the sense of the Open Source Initiative:
+the source code may be read, but its use is restricted as described below.
 
-1. Permitted use. You may download, install and run the Software for personal, educational, evaluation and other
-   non-commercial purposes.
+0. Definitions
+   "Software" means Codex Design: its source code, studios (3D Workshop, Texture Studio, VFX Studio, GFX Studio),
+   SDK, scripts, documentation, training material and bundled libraries authored by AstraServices.
+   "Outputs" means anything produced with the Software: models, textures, materials, VFX packages, Luau code,
+   images, videos, renders and other exported files.
+   "You" means the person or entity using the Software.
+   "Commercial Use" means use intended for, or directed toward, commercial advantage or monetary compensation,
+   including: selling or licensing Outputs; using Outputs in a monetized game or experience (for example Roblox
+   experiences with paid items, game passes, developer products, subscriptions or ads); asset stores; client or
+   contract work; and paid services built on the Software.
 
-2. No modification or redistribution without permission. Without prior written permission from AstraServices you
+1. Acceptance. By downloading, installing, running or otherwise using the Software, You accept this license. If
+   You do not accept it, do not use the Software.
+
+2. Permitted use. You may download, install and run the Software for personal, educational, evaluation and other
+   non-commercial purposes, and use Outputs for the same purposes.
+
+3. No modification or redistribution without permission. Without prior written permission from AstraServices You
    may not:
    a) modify, translate, adapt or create derivative works of the source code;
    b) publish, redistribute, sublicense, sell, rent or host the Software or modified versions of it, in whole or
-      in part, including forks published to public repositories or package registries;
-   c) remove or alter copyright notices, this license, or the provenance metadata the Software embeds in Outputs.
+      in part, including forks published to public repositories or package registries (forking on GitHub solely
+      as required to view the code is not a permitted redistribution channel for modified versions);
+   c) remove or alter copyright notices or this license.
 
-3. No commercial use without permission. Without prior written permission from AstraServices, neither the
-   Software nor its Outputs may be used commercially. Commercial use includes, among others: selling or licensing
-   Outputs, using Outputs in a monetized game or experience (for example Roblox experiences with paid items,
-   game passes, developer products or ads), asset stores, client or contract work, and paid services built on
-   the Software.
+4. Ownership of Outputs.
+   a) AstraServices keeps all rights in the Software, including code, templates, procedural recipes, textures,
+      examples and other material of the Software that appears in Outputs.
+   b) This license does not transfer to AstraServices any rights You hold in Your own original contribution to an
+      Output (for example Your own designs, artwork or recipes). Whether and to what extent an Output is protected
+      by copyright depends on the human contribution, third-party material used and the applicable law.
+   c) Independently of who owns an Output, Your right to use the Software is granted on the condition that Outputs
+      are not put to Commercial Use without permission under section 6. This is a contractual condition of this
+      license, not a claim of ownership over Your original contribution.
 
-4. Provenance. Outputs carry machine-readable provenance metadata (for example PNG text chunks, glTF/GLB asset
-   fields, EXR header attributes, Roblox file comments and manifests, Luau headers) and export file names may
-   contain "_CodexDesign". This metadata identifies Outputs as made with Codex Design and must be kept.
+5. Provenance metadata.
+   a) Outputs carry machine-readable provenance metadata (for example PNG text chunks, glTF/GLB asset fields, EXR
+      header attributes, Roblox file comments and manifests, Luau headers), and export file names may contain
+      "_CodexDesign". Nothing visible is added to the content itself.
+   b) You may not intentionally remove, alter or forge this metadata in order to hide that an Output was made with
+      the Software.
+   c) Loss of metadata caused by ordinary conversion or processing that cannot preserve it (for example importing
+      a GLB into Roblox as a MeshPart, image re-encoding by a platform, renaming files) is not a breach of this
+      license.
 
-5. Third-party material. Bundled third-party assets (icon packs, VFX packs and others under assets/) remain
-   under their own licenses, which are listed with them. This license does not grant rights the third parties did
-   not grant, and their terms apply in addition to this one.
+6. Commercial permission.
+   a) Commercial Use of the Software or of Outputs requires a separate written permission from AstraServices.
+   b) Each permission defines its own scope: covered projects or experiences, territory, duration, whether it is
+      exclusive, transferable or sublicensable, and any fee or attribution. What a permission does not expressly
+      grant stays reserved.
+   c) Permissions are requested at https://github.com/AstraServices/Codex-Design (open an issue or contact the
+      owner). A permission is only valid when confirmed in writing by AstraServices.
 
-6. Permission requests. Requests for commercial use, modification or redistribution:
-   https://github.com/AstraServices/Codex-Design (open an issue or contact the owner).
+7. Asset packs and products sold by AstraServices. Models, textures, VFX and other assets that AstraServices
+   distributes or sells (for example asset packs) are licensed under the terms that come with each product. Those
+   terms, not section 2 or 6 of this license, decide what buyers may do with those assets, including Commercial Use
+   in their own games. Buying such a product does not grant any right to the Software itself.
 
-7. No warranty. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
-   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE
-   FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS OUTPUTS.
+8. Third-party material. Bundled third-party assets (icon packs, VFX packs and others under assets/) remain under
+   their own licenses, which are listed with them. This license does not grant rights the third parties did not
+   grant, and their terms apply in addition to this one.
 
-8. Termination. Any use outside these terms ends your permission to use the Software automatically.
+9. Termination.
+   a) If You breach this license, AstraServices may notify You. If You cure the breach within 30 days after that
+      notice, Your rights continue. Rights end automatically if the breach is not cured in that time, or at once for
+      a repeated breach or an intentional removal of provenance metadata to hide the origin of Outputs.
+   b) After termination You must stop using the Software. Outputs already used for non-commercial purposes before
+      termination may stay where they are, but may not be put to new Commercial Use. Outputs covered by a written
+      commercial permission remain governed by that permission.
+   c) AstraServices may reinstate Your rights in writing.
+   d) Sections 4, 5, 7, 8, 10 and 11 survive termination.
+
+10. No warranty. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY LAW, IN NO
+    EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS
+    OUTPUTS.
+
+11. General. If any provision is held unenforceable, it is limited to the minimum extent necessary and the rest
+    remains in effect. Not enforcing a provision is not a waiver of it. AstraServices may publish new versions of
+    this license; a new version applies to releases published under it.
