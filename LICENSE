@@ -1,5 +1,26 @@
-Codex Design Non-Commercial License (v1.1)
+﻿Codex Design - Copyright Notice and Non-Commercial License (v1.2)
 Copyright (c) 2026 AstraServices. All rights reserved.
+
+PART A - COPYRIGHT NOTICE
+
+A1. Codex Design, including its source code, architecture, user interface, studios, SDK, scripts, shaders,
+    procedural recipes and generators, documentation, training material, texts, images, icons, names and logos
+    created by AstraServices, is an original work protected by copyright. AstraServices is its author and the sole
+    owner of all copyright, related rights and other intellectual property rights in it.
+A2. The Software is protected under the Turkish Law on Intellectual and Artistic Works (Law No. 5846), the Berne
+    Convention for the Protection of Literary and Artistic Works, the WIPO Copyright Treaty and other applicable
+    national and international laws.
+A3. All rights not expressly granted in Part B are reserved by AstraServices, including the rights of
+    reproduction, adaptation, distribution, public performance, transmission and making available to the public.
+A4. Publishing the source code for viewing (for example on GitHub) does not place it in the public domain and does
+    not grant any license beyond Part B.
+A5. "Codex Design" and the associated names and logos identify AstraServices' work and may not be used to name or
+    promote other products without written permission.
+A6. Any use beyond Part B, in particular copying, modifying, redistributing or commercially exploiting the
+    Software without written permission, infringes AstraServices' copyright and may result in civil and criminal
+    liability under applicable law.
+
+PART B - LICENSE
 
 This is a source-available license. It is not an open-source license in the sense of the Open Source Initiative:
 the source code may be read, but its use is restricted as described below.
@@ -74,7 +95,7 @@ the source code may be read, but its use is restricted as described below.
       termination may stay where they are, but may not be put to new Commercial Use. Outputs covered by a written
       commercial permission remain governed by that permission.
    c) AstraServices may reinstate Your rights in writing.
-   d) Sections 4, 5, 7, 8, 10 and 11 survive termination.
+   d) Part A and sections 4, 5, 7, 8, 10 and 11 survive termination.
 
 10. No warranty. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY LAW, IN NO
