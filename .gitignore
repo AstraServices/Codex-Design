@@ -6,3 +6,5 @@ playwright-report/
 install.json
 work/
 outputs/
+codex.settings.json
+codex.settings.json.tmp

@@ -1,11 +1,11 @@
 ---
 name: codex-design-3d
-description: Create procedural 3D models, bone rigs, weighted meshes and exportable animations with the local Codex Design Three.js workshop, including Roblox-style studded parts (StudTrain studs), voxel stud models and a surface painter for any mesh (baked rim/glow/vignette looks, AI-designed color gradients, AO, Stud Nature style), GFX product cards / icons / thumbnails / covers with watermark (19 presets), AI-authored PBR materials exported up to 4K, SIMP engineering topology optimization with a quad mesher, smart quad topology, Roblox material presets, textures, extruded icons from the bundled icon packs, Roblox Highlight (fill + outline) and Edge Outlines that are baked into GLB/glTF and driven in Roblox by a generated CodexOutline Luau script, plus a smart QEM LOD optimizer (skin/UV/crease aware, LOD chains) and topology quality scoring/fixing. Use for code-authored 3D assets, GLB/glTF delivery, Roblox-ready models and browser model previews without Blender; not for 2D website or Roblox ScreenGui UI design.
+description: Create procedural 3D models, rigs and exportable animations with the local Codex Design Three.js workshop, plus three studios - Texture Studio (node-graph PBR materials, seamless/seeded, weathering and geometry masks, 3D painting, Roblox studs, GLSL nodes, export profiles for Roblox SurfaceAppearance/MaterialVariant, Unity URP/HDRP, Unreal ORM, Godot, Blender, glTF, atlases), Roblox-only VFX Studio (ParticleEmitter/Beam/Trail/lights/parts, imported VFX flipbook library, AI-drawn flipbooks, validator, Luau code generator with CONFIG ids, real .rbxm/.rbxmx, Open Cloud upload with API key) and GFX Studio 2.0 (35 presets, auto-fit long titles, clay/wireframe/density/UV/normal modes, exploded and LOD sheets, stats, auto showcase). Also StudTrain studs, surface looks and gradients, Roblox Highlight/Edge Outlines baked into GLB, smart topology and QEM LOD. Use for code-authored 3D assets, textures, Roblox VFX, GLB delivery and GFX without Blender; not for 2D website or ScreenGui UI design.
 ---
 
 # Codex Design 3D
 
-The installed workshop is `C:/Users/astra/CodexDesign`. Read its `AGENTS.md`, `docs/TRAINING.md` (index + behavior rules) and the relevant `Train/<area>/TRAIN.md`, plus `docs/AUTHORING.md`, before authoring an asset; read `docs/RESEARCH.md` only for architectural or format decisions. Respect another workspace explicitly chosen by the user; do not silently move its existing project.
+The workshop is `C:/Users/astra/Documents/CodexDesign` (custom v0.8 build: do not push it to GitHub). Read its `AGENTS.md`, `docs/TRAINING.md` (index + behavior rules) and the relevant `Train/<area>/TRAIN.md`, plus `docs/AUTHORING.md` and `docs/STUDIOS.md` (Texture/VFX/GFX studios), before authoring an asset; read `docs/RESEARCH.md` only for architectural or format decisions. Respect another workspace explicitly chosen by the user; do not silently move its existing project.
 
 Create the actual geometry, rig and animation the user requested. Work through the shared engine instead of writing a new viewer/exporter per request. There is no separate model-generation API: Codex writes a model recipe, and Three.js constructs it.
 
@@ -41,6 +41,30 @@ Create the actual geometry, rig and animation the user requested. Work through t
 9. For Roblox delivery read `docs/ROBLOX.md` and export `npm.cmd run export -- <slug> roblox`: extract the ZIP and import its external-resource `model.gltf`. The package contains PNG textures, material mapping, native editable animation saves and a Studio installer. For a single GLB/glTF use `--target roblox` (shared bone palette, rigid children skinned, bind-space geometry, texture transforms baked to UV0). GLB/glTF download buttons and CLI default to Roblox; `--target generic` selects generic export.
 10. Generic export: `npm.cmd run export -- <slug> glb` (also `gltf`, `obj`, `stl`, `json`, `png`, `lua`). Highlights/edges bake by default (`--highlights full|outline|none`). For Roblox also export `lua` → `exports/<slug>.outline.lua` (CodexOutline Script/ModuleScript). Verify the delivered file with `http://127.0.0.1:4173/?import=exports/<slug>.glb&baked=1`.
 11. Engine changes: `npm.cmd test` and `npm.cmd run test:browser`. New assets: inspect, export, view and validate the GLB rather than hardcoding tests for the recipe.
+
+## Studios (v0.8)
+
+- **Texture Studio** (`http://127.0.0.1:4173/texture`): write materials as graphs in `textures/<name>.graph.json` instead of
+  ad-hoc Python texture scripts (nodes, outputs and format: `docs/STUDIOS.md`; example `textures/volcanic-rock.graph.json`).
+  Export: `npm.cmd run texture -- textures/<name>.graph.json --size 1024 --profile roblox-surfaceappearance,unreal,godot,gltf`
+  (also unity-urp, unity-hdrp, blender, specgloss, roblox-materialvariant, all-maps; `--platform mobile|roblox|pc`).
+- **VFX Studio, Roblox only** (`/vfx`): effects in `vfx/<id>.vfx.json`; search `assets/vfx/library.json` (63 Roblox
+  flipbooks + 93 particles from the user's VFX packs, licenses recorded) before drawing your own art; follow
+  `Train/VfxTrain/TRAIN.md`. `npm.cmd run vfx -- <id> [--validate|--luau-only|--placeholder|--upload]` writes the Luau code
+  generator (CONFIG table with texture ids + builder + VFX API), `.rbxm`, `.rbxmx`, runtime and importer to `exports/vfx/`.
+- **GFX Studio 2.0**: long titles auto-fit (`--title-fit`, `--title-scale`), `--render-mode clay|wireframe|wire-overlay|density|uv|normal|matcap`,
+  `--explode`, `--stats`, presets hero-render, studio-premium, clay, wireframe-pro, topology-inspection, uv-inspection,
+  material-breakdown, pbr-showcase, exploded-view, assembly, rig-showcase, animation-showcase, cinematic-turntable,
+  lod-comparison, technical-blueprint, multi-angle-grid. After a finished model offer `npm.cmd run gfx -- <slug> --preset showcase`.
+- **Roblox import (strict):** check the Roblox Studio MCP first. No connection → ask "Roblox Studio bağlantısı göremedim.
+  Doğrudan Roblox'a yükleyip ID'leri atayayım mı?". Connected → ask "Studio bağlantısı var. Modelleri Roblox'a yükleyip
+  sonra bu açık olan place'e yüklememi ister misin?". Upload only after yes (Open Cloud key: ⚙ Settings → Roblox;
+  `npm.cmd run roblox:upload`). If Studio blocks a domain/folder/permission, tell the user exactly what to add to the
+  Studio/MCP permissions (e.g. the HTTP allowlist entry `127.0.0.1:4173`) and continue with the inline fallback.
+
+- **Code API (SDK), preferred for AIs:** `npm.cmd run codex -- run <script.mjs>` / `call <area>.<op> '<json>'` / `POST /api/sdk/<area>/<op>`;
+  areas texture, vfx, uv (auto UV), bake (high→low), gfx (headless renders, `renderMode:'pathtrace'` ray tracing,
+  `format:'exr'` HDR), roblox. Read `docs/API.md`. The UI stays: SDK results appear in the studios live.
 
 ## Prompts written with PROMPT.md
 

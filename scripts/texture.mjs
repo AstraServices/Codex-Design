@@ -11,6 +11,16 @@ import { generatePBR, packORM, PBR_EXAMPLES, PBR_EXAMPLE_NAMES } from '../src/pb
 import { encodePNG } from '../src/png.js';
 const args=process.argv.slice(2),take=(n,p=v=>v)=>{const i=args.indexOf('--'+n);if(i===-1)return undefined;const v=p(args[i+1]);args.splice(i,2);return v;};
 if(args.includes('--list')){console.log('Examples (learn from them; write your own in textures/*.js):');for(const n of PBR_EXAMPLE_NAMES)console.log(`  ${n.padEnd(15)} ${PBR_EXAMPLES[n].note}`);process.exit(0);}
+// Texture Studio graphs: npm run texture -- textures/<name>.graph.json [--size 1024] [--profile roblox-surfaceappearance,unreal,godot,gltf,…|all] [--platform pc|mobile|roblox]
+if(args[0]&&args[0].endsWith('.graph.json')){
+  const {evaluate,validatePBR}=await import('../src/texture/graph.js'),{exportMaterial,PROFILES}=await import('../src/texture/export.js');
+  const file=path.resolve(args[0]),g=JSON.parse(await (await import('node:fs/promises')).readFile(file,'utf8')),S=take('size',Number)??1024,prof=take('profile')??'roblox-surfaceappearance',platform=take('platform')??'pc';
+  const profiles=prof==='all'?Object.keys(PROFILES):prof.split(','),dirOf=path.dirname(file),t=Date.now();
+  const r=await evaluate(g,{size:S,seed:take('seed',Number)??g.seed,loadGraph:async n=>JSON.parse(await (await import('node:fs/promises')).readFile(path.join(dirOf,n+'.graph.json'),'utf8'))});
+  const name=g.name??path.basename(file,'.graph.json'),{files,report}=exportMaterial(name,r.maps,S,profiles,{deflate:b=>deflateSync(b,{level:6}),platform});
+  const out=path.join(fileURLToPath(new URL('..',import.meta.url)),'exports','texture',name);for(const [k,v] of Object.entries(files)){await mkdir(path.dirname(path.join(out,k)),{recursive:true});await writeFile(path.join(out,k),v);}
+  console.log(JSON.stringify({material:name,dir:out,size:S,seconds:(Date.now()-t)/1000,derived:r.derived,issues:validatePBR(r.maps,S),report},null,1));process.exit(0);
+}
 const size=take('size',Number)??2048,seed=take('seed',Number)??1,color=take('color'),tint=take('tint',Number),outName=take('name');
 if(![256,512,1024,2048,4096].includes(size))throw new Error('--size must be 256, 512, 1024, 2048 or 4096');
 const root=fileURLToPath(new URL('..',import.meta.url)),jobs=[];

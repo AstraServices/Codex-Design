@@ -1,7 +1,10 @@
+import { markPNG } from './watermark.js';
 // GFX Studio: presets, text, layout/background/shadow, watermark (saved to gfx.config.json, shared with `npm run gfx`),
 // live preview, PNG download, and animated MP4/GIF (animation choreography + turntable, encoded by ffmpeg on the server).
 // API: window.codexDesign.gfx(options) → {base64,width,height}; gfxVideo(options) → {file,frames,bytes}; gfxPresets; gfxConfig().
-import { gfx, GFX_PRESETS, WATERMARK_DEFAULTS, loadWatermarkImage, measureFrameLock } from './gfx.js';
+import { gfx, GFX_PRESETS, WATERMARK_DEFAULTS, loadWatermarkImage, measureFrameLock, RENDER_MODES, renderEXR } from './gfx.js';
+// Automatic showcase after a model is finished: beauty, clay, technical wireframe, topology, material breakdown.
+export const SHOWCASE = ['hero-render', 'studio-premium', 'clay', 'wireframe-pro', 'topology-inspection', 'material-breakdown'];
 
 const ANGLE_DEG = { 'three-quarter': [35, 22], iso: [45, 30], front: [0, 6], side: [90, 6], back: [180, 12], top: [30, 58], low: [30, -8], hero: [25, 10] };
 
@@ -10,7 +13,7 @@ export function createGfxPanel(ctx) {
   const { $, renderer, scene, lighting, message, guarded, download } = ctx;
   let lastBlob = null, config = { watermark: null }, logo = null, bgPhoto = null, liveTimer = null, liveBusy = false;
   for (const [id, p] of Object.entries(GFX_PRESETS)) { const opt = document.createElement('option'); opt.value = id; opt.textContent = `${p.label} · ${p.width}×${p.height}`; $('gfx-preset').append(opt); }
-  const context = () => { const root = ctx.getAsset()?.root; return { renderer, scene, lighting, root, hide: scene.children.filter(c => c !== root && !c.isLight && c.visible) }; };
+  const context = () => { const root = ctx.getAsset()?.root; return { renderer, scene, lighting, root, choreography: plan => ctx.choreography(plan), hide: scene.children.filter(c => c !== root && !c.isLight && c.visible) }; };
   const loadConfig = (async () => { try { config = await (await fetch('/api/gfx-config')).json(); } catch { config = {}; } if (config.watermark?.imageSrc) logo = await loadWatermarkImage(config.watermark.imageSrc).catch(() => null); return config; })();
   /** Defaults: shared config (watermark) < project manifest "gfx" < explicit options. watermark:null disables it. */
   async function merged(options = {}) {
@@ -28,6 +31,7 @@ export function createGfxPanel(ctx) {
   function syncPreset() {
     const p = preset(); $('gfx-angle').value = typeof p.angle === 'string' ? p.angle : 'three-quarter'; $('gfx-size').textContent = `${p.width}×${p.height}`;
     setRange('gfx-fill', p.fill ?? 0.6); setRange('gfx-offsetX', p.offsetX ?? 0); setRange('gfx-offsetY', p.offsetY ?? 0); setRange('gfx-vignette', p.vignette ?? 0);
+    $('gfx-renderMode').value = ''; setRange('gfx-spp', p.spp ?? 32); setRange('gfx-explode', p.explode ?? 0); $('gfx-stats').checked = !!p.stats; $('gfx-skeleton').checked = !!p.skeleton; $('gfx-autoangle').checked = p.angle === 'auto';
     setRange('gfx-rays', p.rays?.alpha ?? 0); setRange('gfx-bokeh', p.bokeh ?? 0); $('gfx-bgtype').value = ''; $('gfx-shadow').value = '';
     const cols = Array.isArray(p.bg?.colors) ? p.bg.colors : ['#f6f9fb', '#c3d0da']; ['gfx-bg0', 'gfx-bg1', 'gfx-bg2'].forEach((id, i) => { $(id).value = cols[Math.min(i, cols.length - 1)]; });
   }
@@ -45,12 +49,17 @@ export function createGfxPanel(ctx) {
     const sh = $('gfx-shadow').value; if (sh) Object.assign(o, { floatShadow: sh === 'float' ? 0.34 : 0, float: sh === 'float' ? (p.float ?? 0.06) : 0, dropShadow: sh === 'drop' ? 0.35 : 0, hardShadow: sh === 'hard' ? 0.35 : 0 });
     if ($('gfx-outline').checked) o.outline = '#ffffff';
     if (bgPhoto && $('bg-photo-on').checked) o.bgImage = { image: bgPhoto, fit: $('bg-photo-fit').value, blur: +$('bg-photo-blur').value, darken: +$('bg-photo-darken').value, zoom: +$('bg-photo-zoom').value };
+    o.spp = +$('gfx-spp').value; o.onProgress = p => { $('gfx-showcase-status').textContent = `Ray tracing ${Math.round(p * 100)}%`; };
+    o.titleScale = +$('gfx-titleScale').value; o.titleFit = $('gfx-titleFit').value;
+    if ($('gfx-renderMode').value) o.renderMode = $('gfx-renderMode').value;
+    o.explode = +$('gfx-explode').value; o.stats = $('gfx-stats').checked; o.skeleton = $('gfx-skeleton').checked; if ($('gfx-autoangle').checked) o.angle = 'auto';
+    const k = +$('gfx-scale').value || 1; if (k > 1) { o.width = Math.min(8192, p.width * k); o.height = Math.min(8192, p.height * k); }
     const w = readWatermark(); o.watermark = w.enabled ? { ...w, image: logo } : null;
     return o;
   }
   const show = async canvas => { lastBlob = await new Promise(r => canvas.toBlob(r, 'image/png')); const old = $('gfx-image').src; $('gfx-image').src = URL.createObjectURL(lastBlob); if (old.startsWith('blob:')) URL.revokeObjectURL(old); $('gfx-download').disabled = false; };
   // Live preview: half resolution, debounced, never overlapping.
-  function live() { clearTimeout(liveTimer); liveTimer = setTimeout(async () => { if (liveBusy || !$('gfx-dialog').open) return; liveBusy = true; try { const o = formOptions(), p = GFX_PRESETS[o.preset]; await show(await render({ ...o, width: Math.round(p.width / 2), height: Math.round(p.height / 2) })); $('gfx-live-note').textContent = 'Live preview (half size). Render full size to download.'; } catch (e) { $('gfx-live-note').textContent = e.message; } finally { liveBusy = false; } }, 160); }
+  function live() { if ($('gfx-renderMode').value === 'pathtrace' || (!$('gfx-renderMode').value && GFX_PRESETS[$('gfx-preset').value]?.renderMode === 'pathtrace')) { $('gfx-live-note').textContent = 'Ray-traced preset: live preview off · press Render full size (progress below the Render mode section).'; return; } $('gfx-live-note').textContent = 'Live preview updates as you edit.'; clearTimeout(liveTimer); liveTimer = setTimeout(async () => { if (liveBusy || !$('gfx-dialog').open) return; liveBusy = true; try { const o = formOptions(), p = GFX_PRESETS[o.preset]; await show(await render({ ...o, width: Math.round(p.width / 2), height: Math.round(p.height / 2) })); $('gfx-live-note').textContent = 'Live preview (half size). Render full size to download.'; } catch (e) { $('gfx-live-note').textContent = e.message; } finally { liveBusy = false; } }, 160); }
   $('gfx-dialog').addEventListener('input', e => { if (!e.target.closest('#vid-clips') && !e.target.id?.startsWith('vid-')) live(); });
   $('gfx-dialog').addEventListener('change', e => { if (e.target.id === 'gfx-preset') syncPreset(); if (!e.target.id?.startsWith('vid-')) live(); });
   $('wm-image').onchange = guarded(async () => {
@@ -66,6 +75,9 @@ export function createGfxPanel(ctx) {
     if (!clips.length) { box.textContent = 'This model has no animation clips (turntable still works).'; return; }
     clips.forEach((c, i) => { const l = document.createElement('label'), cb = document.createElement('input'); cb.type = 'checkbox'; cb.value = c.name; cb.checked = i === 0; l.append(cb, `${c.name} (${c.duration.toFixed(1)}s)`); box.append(l); });
   }
+  const settings = fetch('/api/settings').then(r => r.json()).catch(() => ({}));
+  settings.then(s => { if (s.gfx) { $('gfx-titleFit').value = s.gfx.titleFit ?? 'auto'; setRange('gfx-titleScale', s.gfx.titleScale ?? 1); } });
+  if (new URLSearchParams(location.search).get('gfx') === '1') { const wait = setInterval(() => { if (ctx.getAsset()) { clearInterval(wait); open(); } }, 300); }
   function open() {
     loadConfig.then(() => {
       const g = ctx.getProject()?.gfx ?? {};
@@ -76,7 +88,20 @@ export function createGfxPanel(ctx) {
   $('gfx-open').onclick = open; $('gfx-header').onclick = open;
   $('gfx-render').onclick = guarded(async () => { const canvas = await render(formOptions()); await show(canvas); message(`GFX rendered · ${canvas.width}×${canvas.height}`); });
   $('gfx-all').onclick = guarded(async () => { const base = formOptions(), id = ctx.getProject()?.id || 'model'; for (const p of Object.keys(GFX_PRESETS)) { const P = GFX_PRESETS[p]; const canvas = await render({ ...base, preset: p, angle: P.angle, fill: P.fill, offsetX: P.offsetX, offsetY: P.offsetY, vignette: P.vignette, rays: P.rays, bokeh: P.bokeh }); await show(canvas); download(lastBlob, `${id}.gfx-${p}.png`, 'image/png'); } message(`Rendered ${Object.keys(GFX_PRESETS).length} GFX presets`); });
-  $('gfx-download').onclick = () => { if (lastBlob) download(lastBlob, `${ctx.getProject()?.id || 'model'}.gfx-${$('gfx-preset').value}.png`, 'image/png'); };
+  $('gfx-download').onclick = guarded(async () => { if (!lastBlob) return; const fmt = $('gfx-format').value, name = `${ctx.getProject()?.id || 'model'}.gfx-${$('gfx-preset').value}`;
+    if (fmt === 'png') return download(new Blob([markPNG(new Uint8Array(await lastBlob.arrayBuffer()))], { type: 'image/png' }), name + '.png', 'image/png');
+    if (fmt === 'exr') { const o = formOptions(), P = GFX_PRESETS[o.preset]; return download(new Blob([exr({ ...o, width: o.width ?? P.width, height: o.height ?? P.height })], { type: 'image/x-exr' }), name + '.exr', 'image/x-exr'); }
+    const img = await createImageBitmap(lastBlob), c = document.createElement('canvas'); c.width = img.width; c.height = img.height; const g = c.getContext('2d'); if (fmt === 'jpeg') { g.fillStyle = '#ffffff'; g.fillRect(0, 0, c.width, c.height); } g.drawImage(img, 0, 0);
+    const blob = await new Promise(res => c.toBlob(res, 'image/' + fmt, 0.95)); download(blob, `${name}.${fmt === 'jpeg' ? 'jpg' : fmt}`, blob.type); });
+  const exr = o => renderEXR(context(), o.width, o.height, { angle: o.angle === 'auto' ? 'three-quarter' : o.angle, fov: o.fov, renderMode: o.renderMode, explode: o.explode, skeleton: o.skeleton, type: o.exrType ?? 'half' });
+  // Automatic showcase: beauty + clay + wireframe + topology + material breakdown, saved to exports/gfx/ and downloaded.
+  async function showcase(options = {}) {
+    const id = ctx.getProject()?.id || 'model', list = options.presets ?? SHOWCASE, out = [];
+    for (const preset of list) { $('gfx-showcase-status').textContent = `Rendering ${preset}…`; const P = GFX_PRESETS[preset]; const canvas = await render({ ...options, preset, angle: P.angle, fill: P.fill, offsetX: P.offsetX, offsetY: P.offsetY, vignette: P.vignette, renderMode: P.renderMode, explode: P.explode, stats: P.stats, skeleton: P.skeleton });
+      const b64 = canvas.toDataURL('image/png').split(',')[1], file = `${id}.showcase-${preset}.png`, r = await fetch(`/api/export-file/gfx/${file}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ base64: b64 }) }); out.push((await r.json()).file); }
+    $('gfx-showcase-status').textContent = `Saved ${out.length} images to exports/gfx/`; return out;
+  }
+  $('gfx-showcase').onclick = guarded(async () => { const files = await showcase({ title: $('gfx-title').value.trim() || undefined, watermark: formOptions().watermark }); message(`Showcase: ${files.length} renders in exports/gfx/`); });
   $('vid-render').onclick = guarded(async () => {
     const mode = $('vid-mode').value, picked = [...document.querySelectorAll('#vid-clips input:checked')].map(c => c.value);
     const animation = mode === 'none' ? null : { mode: mode === 'all' ? 'sequence' : mode, clips: mode === 'all' ? 'all' : picked, crossfade: +$('vid-crossfade').value, speed: +$('vid-speed').value, loops: +$('vid-loops').value, seamless: $('vid-seamless').checked };
@@ -113,6 +138,10 @@ export function createGfxPanel(ctx) {
   }
   return { api: {
     gfxPresets: Object.keys(GFX_PRESETS),
+    showcase: options => showcase(options),
+    /** HDR beauty pass as OpenEXR (linear, alpha): {base64, width, height} */
+    async gfxEXR(options = {}) { const o = await merged(options), P = GFX_PRESETS[o.preset ?? 'card'], k = o.scale ?? 1; const bytes = exr({ ...o, width: (o.width ?? P.width) * k, height: (o.height ?? P.height) * k }); let s = ''; for (let i = 0; i < bytes.length; i += 32768) s += String.fromCharCode(...bytes.subarray(i, i + 32768)); return { base64: btoa(s), width: o.width ?? P.width, height: o.height ?? P.height }; },
+    renderModes: RENDER_MODES,
     gfxConfig: async () => { await loadConfig; return config; },
     async gfx(options = {}) { const canvas = await render(options), url = canvas.toDataURL('image/png'); return { base64: url.slice(url.indexOf(',') + 1), width: canvas.width, height: canvas.height }; },
     gfxVideo: options => gfxVideo(options),

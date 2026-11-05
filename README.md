@@ -2,6 +2,15 @@
 
 Blender kullanmadan, Three.js ile koddan **3D model, rig ve animasyon** üreten yerel çalışma sistemi. Modeli Codex bu sohbetten yazar; ortak motor tarayıcıda gösterir ve gerçek dosyaya aktarır. Uygulama içinde ayrı bir LLM çağrısı veya ücretli API yoktur.
 
+## Studios (v0.8 custom build)
+
+- **Texture Studio** — `http://127.0.0.1:4173/texture`: node-graph PBR materials (seamless, seeded), 3D paint, geometry masks, export profiles for Roblox, Unity, Unreal, Godot, Blender, glTF.
+- **VFX Studio (Roblox only)** — `http://127.0.0.1:4173/vfx`: imported VFX flipbook library + AI-drawn art, Roblox validator, Luau code generator, `.rbxm`/`.rbxmx`, one-click Open Cloud upload.
+- **GFX Studio 2.0** — long titles auto-fit, clay/wireframe/density/UV modes, 16 new presets, automatic showcase.
+- **Settings** (⚙ / `,`) — Roblox Creator Dashboard API key (stored locally in `codex.settings.json`, never committed), creator id, studio defaults.
+
+Details: `docs/STUDIOS.md`, `Train/VfxTrain/TRAIN.md`. CLIs: `npm run texture -- textures/<name>.graph.json --profile …`, `npm run vfx -- <id>`, `npm run roblox:upload -- <file>`, `npm run gfx -- <slug> --preset showcase`.
+
 ## Kurulum ve otomatik güncelleme
 
 Yeni bir bilgisayarda `install.bat` dosyasını çalıştır: atölyeyi GitHub'dan indirir, `npm install` yapar, C:\, D:\ … sürücülerinde Claude Code, Codex, Antigravity ve `.agents` klasörlerini arar ve `codex-design-3d` skill'inin hangisine kurulacağını sorar.
@@ -134,3 +143,8 @@ Testler ağırlıklı deformasyonu, statik pozun bake edilmesini, gerçek CSG de
 ## v0.7: Roblox transfer
 
 `npm.cmd run export -- <slug> roblox` produces and extracts a Studio package with external PNGs, a common bone palette, native editable animation saves and a modern AnimSaves installer. GLB/glTF downloads and CLI default to the Roblox profile; choose General glTF engines / `--target generic` for generic export. Read [docs/ROBLOX.md](docs/ROBLOX.md). `npm.cmd run verify:roblox -- <slug>` validates a GLB and compares world-space deformation in every clip. Studio verification is still required before claiming importer compatibility.
+
+
+## License
+
+Codex Design Non-Commercial License (see `LICENSE`): no modification, redistribution or commercial use of the software or its outputs without written permission. Exports carry invisible provenance metadata and `_CodexDesign` in ZIP names. Showcase report: `docs/CODEX-DESIGN-RAPOR.md`.

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Codex Design · Texture Studio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23d5ecab' d='M16 1 30 9v15l-14 7L2 24V9z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/src/style.css"><link rel="stylesheet" href="/src/studio/shell.css"><link rel="stylesheet" href="/src/texture/texture.css">
+  <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/","fflate":"/node_modules/fflate/esm/browser.js","three-mesh-bvh":"/node_modules/three-mesh-bvh/src/index.js"}}</script>
+</head>
+<body>
+  <header><a class="brand" href="/">⌘ <strong>codex</strong><span>design</span><i>TEX</i></a><span class="grow"></span><button id="new-graph">＋ New material</button><button id="save" title="Save (Ctrl+S)">Save</button><button id="export-open" class="primary">↓ Export maps</button></header>
+  <main class="studio tex-studio">
+    <aside class="left">
+      <div class="eyebrow">TEXTURE STUDIO <span>PBR · NODE GRAPH</span></div>
+      <h1>Materials, built<br>node by node.</h1>
+      <p class="muted">Seamless, seed-based, resolution-independent.<br>One graph → every engine.</p>
+      <section class="panel"><div class="section-label">MATERIALS <span id="mat-count"></span></div><div id="mat-list"></div></section>
+      <section class="panel"><div class="section-label">NODES <span>CLICK TO ADD</span></div><input id="node-search" type="search" placeholder="Search nodes…" aria-label="Search nodes" style="margin-top:9px"><div id="palette"></div></section>
+    </aside>
+    <section class="stage">
+      <div class="stage-bar"><span class="title" id="mat-title">Texture Studio</span>
+        <button id="fit" title="Frame graph (F)">⌖ Frame</button><button id="prune" title="Remove nodes no output uses">✂ Optimize graph</button>
+        <label class="fine">Seed <input id="seed" type="number" min="1" value="1" style="width:64px"></label>
+        <label class="fine">Preview <select id="psize"><option>128</option><option selected>256</option><option>512</option><option>1024</option></select></label>
+        <span id="eval-state" class="fine"></span></div>
+      <div class="graph" id="graph"><svg id="wires"></svg><div class="graph-world" id="world"></div><div class="hud" id="graph-hud">Drag node headers · drag ● output → ○ input to connect · click a connected input to unplug · Del removes · wheel zooms</div></div>
+      <div class="maps-strip" id="maps"></div>
+    </section>
+    <aside class="right">
+      <section class="panel"><div class="view3d" id="view3d"></div>
+        <div class="row" style="margin-top:8px"><select id="shape" aria-label="Preview mesh"><option value="sphere">Sphere</option><option value="cube">Cube</option><option value="plane">Plane</option><option value="cylinder">Cylinder</option><option value="torus">Torus knot</option><option value="rock">Rock</option></select>
+          <select id="light" aria-label="Lighting"><option value="studio">Studio HDRI</option><option value="roblox">Roblox-like</option><option value="dramatic">Dramatic</option><option value="flat">Flat</option></select>
+          <select id="channel" aria-label="Channel"><option value="lit">Lit PBR</option><option value="baseColor">Base color</option><option value="normal">Normal</option><option value="roughness">Roughness</option><option value="metalness">Metalness</option><option value="ao">AO</option><option value="emissive">Emissive</option><option value="height">Height</option><option value="curvature">Curvature</option><option value="uv">UV checker</option></select></div>
+        <div class="row" style="margin-top:6px"><label class="fine">Tiling <input id="repeat" type="number" min="1" max="16" value="1" style="width:50px"></label><label class="fine check"><input type="checkbox" id="wire"> Wireframe</label><button id="ab" title="Compare with the previous result">A/B</button><label class="grow"></label><input id="glb" type="file" accept=".glb,.gltf" hidden><button id="glb-open">↥ Mesh</button></div>
+      </section>
+      <section class="panel"><div class="section-label">NODE <span id="node-id"></span></div><div id="inspector" class="fine">Select a node.</div></section>
+      <section class="panel"><div class="section-label">OUTPUTS <span>PBR MAPS</span></div><div id="outputs"></div></section>
+      <section class="panel"><div class="section-label">3D PAINT <span id="paint-state">OFF</span></div>
+        <div class="chips" id="paint-tools"><button data-tool="off" aria-pressed="true">Orbit</button><button data-tool="brush">Brush</button><button data-tool="eraser">Eraser</button><button data-tool="fill">Fill</button></div>
+        <div class="row"><label class="field grow">Layer<select id="paint-channel"><option value="baseColor">Base color</option><option value="roughness">Roughness</option><option value="metalness">Metalness</option></select></label><label class="field">Color<input id="paint-color" type="color" value="#ff8a2a"></label></div>
+        <label class="field">Value (rough/metal) <output id="paint-value-v">1</output><input id="paint-value" type="range" min="0" max="1" step="0.05" value="1"></label>
+        <label class="field">Size <output id="paint-size-v">0.03</output><input id="paint-size" type="range" min="0.005" max="0.2" step="0.005" value="0.03"></label>
+        <label class="field">Opacity <output id="paint-op-v">0.8</output><input id="paint-op" type="range" min="0.05" max="1" step="0.05" value="0.8"></label>
+        <div class="row"><label class="fine check"><input type="checkbox" id="paint-sym"> X symmetry</label><button id="paint-undo">↶ Undo</button><button id="paint-clear">Clear layer</button></div>
+        <p class="fine">Pen pressure scales the brush. Paint is UV-space, seam-wrapped and merged into the exported maps.</p></section>
+      <section class="panel"><div class="section-label">GEOMETRY MASKS <span id="mask-state"></span></div>
+        <p class="fine">Bake curvature, convex/concave, slope, up-facing, height and AO from the preview mesh into UV space, then use them with the <b>Mesh mask</b> node (snow on tops, dirt in cavities, wear on edges).</p><button id="bake" class="full">Bake masks from mesh</button></section>
+      <section class="panel"><div class="section-label">UV &amp; BAKING <span id="uv-state"></span></div>
+        <p class="fine">Auto UV unwraps the preview mesh (smart project: charts by normal angle, no overlaps, uniform texel density). Bake transfers a high-poly GLB onto it: tangent-space normal (OpenGL), AO, height, curvature, position, with padding. Use the results with the <b>Baked map</b> node.</p>
+        <div class="row"><label class="fine">Chart angle <input id="uv-angle" type="number" min="10" max="89" value="66" style="width:54px"></label><button id="uv-auto" class="grow">⇲ Auto UV</button></div>
+        <div class="row" style="margin-top:6px"><input id="hi-file" type="file" accept=".glb,.gltf" hidden><button id="hi-open" class="grow">↥ High-poly</button><label class="fine">Cage <input id="bake-cage" type="number" min="0.002" max="0.2" step="0.002" value="0.02" style="width:62px"></label></div>
+        <div class="row" style="margin-top:6px"><label class="fine">Size <select id="bake-size"><option>256</option><option selected>512</option><option>1024</option><option>2048</option></select></label><label class="fine">AO rays <input id="bake-ao" type="number" min="0" max="64" value="16" style="width:50px"></label><button id="bake-go" class="primary grow">Bake high → low</button></div>
+        <div class="issues" id="uv-report"></div></section>
+      <section class="panel"><div class="section-label">VALIDATION <span id="val-summary"></span></div><div class="issues" id="issues"></div></section>
+      <section class="panel"><div class="section-label">GRAPH JSON <span>AI-EDITABLE</span></div><textarea id="json" class="code" rows="8" spellcheck="false"></textarea><button id="json-apply" class="full">Apply JSON</button>
+        <p class="fine">Ask the AI in chat (“dark basalt with glowing cracks for Roblox”): it writes <span class="mono">textures/&lt;name&gt;.graph.json</span> and this page reloads it live.</p></section>
+    </aside>
+  </main>
+  <footer><span><span class="live-dot"></span> <span id="status" role="status">Loading Texture Studio</span></span><span>SEAMLESS · SEEDED · PBR</span><span>CODEX DESIGN / TEXTURE STUDIO</span></footer>
+  <dialog id="export-dialog" class="dialog"><form method="dialog"><div class="section-label">EXPORT MAPS <span id="ex-name"></span></div>
+    <div class="field">Engine profiles<div id="ex-profiles" class="profile-grid"></div></div>
+    <div class="row"><label class="field grow">Resolution<select id="ex-size"><option>256</option><option>512</option><option selected>1024</option><option>2048</option><option>4096</option></select></label><label class="field grow">Platform<select id="ex-platform"></select></label></div>
+    <div class="issues" id="ex-report"></div>
+    <div class="panel"><div class="section-label">ATLAS <span>SEVERAL MATERIALS → ONE TEXTURE</span></div><div id="ex-atlas" class="chips"></div><button type="button" id="ex-atlas-go" class="full">Build atlas from selected materials</button></div>
+    <div class="panel"><div class="section-label">ROBLOX <span id="ex-key-state"></span></div><p class="fine">Uploads the SurfaceAppearance maps with your Open Cloud key (Settings), then writes the ids into the .rbxmx and a Luau snippet.</p><button type="button" id="ex-roblox" class="full">⇪ Upload Roblox maps → ids into .rbxmx + Luau</button></div>
+    <div class="actions"><span id="ex-status" class="fine grow"></span><button value="cancel">Close</button><button type="button" id="ex-go" class="primary">↓ Export ZIP</button></div></form></dialog>
+  <script type="module" src="/src/texture/app.js"></script>
+</body></html>

@@ -1,0 +1,149 @@
+{
+ "name": "sdk-ice-crystal",
+ "description": "SDK demo: cracked blue ice with frosted edges",
+ "seed": 11,
+ "nodes": [
+  {
+   "id": "cells",
+   "type": "worley",
+   "params": {
+    "scale": 6,
+    "mode": "edge",
+    "warp": 0.06
+   },
+   "inputs": {},
+   "x": 40,
+   "y": 40
+  },
+  {
+   "id": "cracks",
+   "type": "cracks",
+   "params": {
+    "scale": 6,
+    "width": 0.035,
+    "warp": 0.06
+   },
+   "inputs": {},
+   "x": 260,
+   "y": 40
+  },
+  {
+   "id": "frost",
+   "type": "fbm",
+   "params": {
+    "scale": 10,
+    "octaves": 6
+   },
+   "inputs": {},
+   "x": 480,
+   "y": 40
+  },
+  {
+   "id": "plates",
+   "type": "levels",
+   "params": {
+    "inHigh": 0.4
+   },
+   "inputs": {
+    "in": "cells"
+   },
+   "x": 700,
+   "y": 40
+  },
+  {
+   "id": "height",
+   "type": "blend",
+   "params": {
+    "mode": "multiply",
+    "opacity": 0.4
+   },
+   "inputs": {
+    "a": "plates",
+    "b": "frost"
+   },
+   "x": 920,
+   "y": 40
+  },
+  {
+   "id": "iceColor",
+   "type": "colorRamp",
+   "params": {
+    "stops": [
+     [
+      0,
+      "#1d4f7a"
+     ],
+     [
+      0.6,
+      "#5fb3e6"
+     ],
+     [
+      1,
+      "#d9f3ff"
+     ]
+    ]
+   },
+   "inputs": {
+    "in": "height"
+   },
+   "x": 40,
+   "y": 210
+  },
+  {
+   "id": "white",
+   "type": "color",
+   "params": {
+    "color": "#eefaff"
+   },
+   "inputs": {},
+   "x": 260,
+   "y": 210
+  },
+  {
+   "id": "snow",
+   "type": "weathering",
+   "params": {
+    "kind": "snow",
+    "amount": 0.5
+   },
+   "inputs": {
+    "height": "height"
+   },
+   "x": 480,
+   "y": 210
+  },
+  {
+   "id": "albedo",
+   "type": "blend",
+   "params": {
+    "mode": "mix"
+   },
+   "inputs": {
+    "a": "iceColor",
+    "b": "white",
+    "mask": "snow"
+   },
+   "x": 700,
+   "y": 210
+  },
+  {
+   "id": "rough",
+   "type": "levels",
+   "params": {
+    "outLow": 0.05,
+    "outHigh": 0.4
+   },
+   "inputs": {
+    "in": "cracks"
+   },
+   "x": 920,
+   "y": 210
+  }
+ ],
+ "outputs": {
+  "baseColor": "albedo",
+  "height": "height",
+  "roughness": "rough"
+ },
+ "normalStrength": 5
+}

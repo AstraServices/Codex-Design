@@ -1,0 +1,45 @@
+{
+ "name": "IceExplosion",
+ "description": "Frost burst: white flash, icy shards, cold smoke, expanding force-field shockwave and a blue light pulse.",
+ "style": "stylized",
+ "duration": 1.2,
+ "loop": false,
+ "layers": [
+  {
+   "type": "emitter", "name": "Flash",
+   "texture": { "src": "assets/vfx/vfx-pack2/particles/light-01.png" },
+   "props": { "Lifetime": [0.15, 0.25], "Speed": [0, 0], "Size": [[0, 2], [0.4, 9], [1, 12]], "Transparency": [[0, 0], [0.6, 0.4], [1, 1]],
+    "Color": [[0, "#ffffff"], [1, "#9fe6ff"]], "LightEmission": 1, "LightInfluence": 0, "Brightness": 3, "ZOffset": 1 },
+   "emit": { "mode": "burst", "bursts": [{ "t": 0, "count": 2 }] }
+  },
+  {
+   "type": "emitter", "name": "Shards",
+   "texture": { "src": "assets/vfx/vfx-pack2/particles/spark-04.png" },
+   "props": { "Lifetime": [0.5, 0.9], "Speed": [28, 44], "SpreadAngle": [180, 180], "Size": [[0, 0.9, 0.3], [1, 0]], "Transparency": [[0, 0], [0.8, 0.2], [1, 1]],
+    "Color": [[0, "#e8fbff"], [1, "#5cc8ff"]], "Drag": 6, "Acceleration": [0, -30, 0], "Orientation": "VelocityParallel", "Squash": [[0, 2.5], [1, 1]],
+    "LightEmission": 0.8, "LightInfluence": 0 },
+   "emit": { "mode": "burst", "bursts": [{ "t": 0, "count": 36 }, { "t": 0.08, "count": 14 }] }
+  },
+  {
+   "type": "emitter", "name": "ColdSmoke",
+   "texture": { "src": "assets/vfx/vfx-pack2/wispy-smoke-01/flipbook.png", "grid": 8 },
+   "props": { "Lifetime": [0.9, 1.2], "Speed": [6, 12], "SpreadAngle": [180, 180], "Size": [[0, 3], [1, 8]], "Transparency": [[0, 0.3], [1, 1]],
+    "Color": [[0, "#d9f4ff"], [1, "#7fb4d6"]], "Drag": 3, "Rotation": [0, 360], "RotSpeed": [-40, 40],
+    "FlipbookLayout": "Grid8x8", "FlipbookMode": "OneShot", "FlipbookFramerate": [56, 56], "LightEmission": 0, "LightInfluence": 0.6 },
+   "emit": { "mode": "burst", "bursts": [{ "t": 0.02, "count": 10 }] }
+  },
+  {
+   "type": "mesh", "name": "Shockwave", "shape": "Ball", "material": "ForceField", "color": "#7fd8ff",
+   "size": [2, 2, 2], "transparency": 0,
+   "anim": [
+    { "prop": "Size", "from": [2, 2, 2], "to": [22, 22, 22], "time": 0.45, "style": "Quint", "dir": "Out" },
+    { "prop": "Transparency", "from": 0, "to": 1, "time": 0.5, "style": "Quad", "dir": "In" }
+   ]
+  },
+  {
+   "type": "light", "name": "ColdLight", "class": "PointLight",
+   "props": { "Color": "#8fdcff", "Brightness": 6, "Range": 24 }, "duration": 0.6,
+   "anim": [{ "prop": "Brightness", "from": 6, "to": 0, "time": 0.6, "style": "Quad", "dir": "Out" }]
+  }
+ ]
+}

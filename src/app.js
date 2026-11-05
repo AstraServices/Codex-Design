@@ -313,7 +313,7 @@ Object.assign(window.codexDesign,lodPanel.api);
 Object.assign(window.codexDesign,panels.api,{get highlightRenderer(){return fx;}});
 Object.assign(window.codexDesign,createSurfacePanel({$,getAsset:()=>asset,message,guarded,stats}).api);
 Object.assign(window.codexDesign,createGfxPanel({$,renderer,scene,lighting,getAsset:()=>asset,getProject:()=>project,message,guarded,download,choreography}).api);
-new EventSource('/api/events').onmessage=guarded(async()=>{await refreshProjects();if(project)await loadProject(project.id,{keepView:true});else if(!asset)await loadProject(projects[0].id);});
+new EventSource('/api/events').onmessage=guarded(async(e)=>{let d={};try{d=JSON.parse(e.data);}catch{}if(d.dirs&&!d.dirs.some(x=>x==='projects'||x==='src'))return;await refreshProjects();if(project)await loadProject(project.id,{keepView:true});else if(!asset)await loadProject(projects[0].id);});
 // ?import=exports/<file>.glb previews an exported file; add &baked=1 to see it without live effects.
 async function importURL(url,options){const r=await fetch('/'+url.replace(/^\/+/,''));if(!r.ok)throw new Error(`Cannot fetch ${url}`);await importFiles([new File([await r.blob()],url.split('/').pop())],options);}
 window.codexDesign.importURL=guarded(importURL);

@@ -1,3 +1,4 @@
+import { markGLB, markGLTF } from './watermark.js';
 import * as THREE from 'three';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { STLExporter } from 'three/addons/exporters/STLExporter.js';
@@ -89,7 +90,7 @@ export async function encodeAsset(root,clips,format,options={}) {
     for(const skin of skins){scene.attach(skin);skin.position.set(0,0,0);skin.quaternion.identity();skin.scale.set(1,1,1);skin.updateMatrix();}
     const exporter=new GLTFExporter();if(canonical)sharedRobloxSkin(exporter);
     const result=await exporter.parseAsync(scene,{binary:format==='glb',animations:clips,trs:true,onlyVisible:true,includeCustomExtensions:true});
-    return {data:format==='glb'?new Uint8Array(result):strToU8(JSON.stringify(result)),extension:format,mime:format==='glb'?'model/gltf-binary':'model/gltf+json'};
+    return {data:format==='glb'?markGLB(new Uint8Array(result)):strToU8(JSON.stringify(markGLTF(result))),extension:format,mime:format==='glb'?'model/gltf-binary':'model/gltf+json'};
   }
   if(format==='json')return {data:strToU8(JSON.stringify({...root.toJSON(),animations:clips.map(c=>THREE.AnimationClip.toJSON(c))})),extension:'three.json',mime:'application/json'};
   if(format==='obj'||format==='stl') {

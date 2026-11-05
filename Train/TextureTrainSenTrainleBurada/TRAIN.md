@@ -33,3 +33,12 @@ up-facing faces (`worldNormal.y`), rust in cavities (`ao`), glowing runes on one
 reflectance color. 3. Roughness varies: cavities rougher, worn edges smoother. 4. Metalness 0 or 1 except worn transitions.
 5. Break repetition: domain warp + per-cell id variation. 6. Texel density: Roblox imports ≤1024² per map; use 512–1024 for
 props, 2K–4K only for hero/sale texture sets.
+
+
+## Texture Studio (v0.8)
+
+Materials are now node graphs (`textures/<name>.graph.json`, see `docs/STUDIOS.md`). Write the graph instead of a one-off
+script: noise/pattern generators → masks (weathering, slope, height, curvature, mesh masks) → colorRamp/blend → outputs
+(baseColor, height, roughness, metalness, emissive, opacity). Normal/AO/curvature derive from height. Check the page's
+validation (seams, albedo range, metal binariness), then export per engine profile. `textures/volcanic-rock.graph.json`
+is the worked example (dark basalt, glowing orange cracks, Roblox-compatible).

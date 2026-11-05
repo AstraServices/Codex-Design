@@ -1,4 +1,4 @@
-// GFX renders: npm run gfx -- <slug> [--preset <name>|all|--list] [--title "Swing Set"] [--tag NEW] [--subtitle ".."] [--footer ".."]
+// GFX renders: npm run gfx -- <slug> [--preset <name>|a,b,c|all|showcase|--list] [--title-scale 0.8] [--title-fit auto|shrink|wrap|off] [--render-mode clay|wireframe|wire-overlay|density|uv|normal|matcap|roughness|metalness] [--explode 1] [--stats] [--title "Swing Set"] [--tag NEW] [--subtitle ".."] [--footer ".."]
 //   [--angle three-quarter|iso|hero|front|side|back|top|low] [--accent #2f7d9a] [--rarity legendary] [--width 1024 --height 1024]
 //   [--outline #ffffff] [--light studio]
 //   Watermark (defaults come from gfx.config.json, saved by the workshop's GFX dialog):
@@ -7,6 +7,7 @@
 //   Animated: [--video mp4|gif] [--fps 30] [--duration 4] [--turntable 360] [--video-width 720]
 //   [--clips "Run,Attack" | --clips all] [--mode sequence|together] [--crossfade 0.25] [--speed 1] [--loops 1] [--weights 1,0.5] [--no-seamless] [--no-animation]
 //   Background photo: [--bg-image photo.jpg --bg-fit cover|contain --bg-blur 8 --bg-darken 0.3 --bg-zoom 1]
+import { markPNG } from '../src/watermark.js';
 import { launchBrowser } from './browser.mjs';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -17,6 +18,8 @@ const flag = name => { const i = args.indexOf('--' + name); if (i === -1) return
 if (flag('list')) { const { GFX_PRESETS } = await import('../src/gfx.js').catch(() => ({})); if (GFX_PRESETS) for (const [k, p] of Object.entries(GFX_PRESETS)) console.log(`${k.padEnd(18)} ${p.label} · ${p.width}×${p.height}`); process.exit(0); }
 for (const f of ['preset', 'title', 'tag', 'subtitle', 'footer', 'angle', 'accent', 'outline', 'rarity']) { const v = take(f); if (v !== undefined) opts[f] = v; }
 for (const f of ['width', 'height']) { const v = take(f); if (v !== undefined) opts[f] = Number(v); }
+for (const [f, k, num] of [['title-scale', 'titleScale', 1], ['title-fit', 'titleFit'], ['render-mode', 'renderMode'], ['explode', 'explode', 1]]) { const v = take(f); if (v !== undefined) opts[k] = num ? Number(v) : v; }
+if (flag('stats')) opts.stats = true; if (flag('skeleton')) opts.skeleton = true;
 const light = take('light');
 // Background photo: --bg-image photo.jpg [--bg-fit cover|contain] [--bg-blur 8] [--bg-darken 0.3] [--bg-zoom 1]
 const bgImagePath = take('bg-image');
@@ -44,11 +47,11 @@ try {
   await page.goto(`${url}/?project=${id}${light ? `&light=${light}` : ''}`); await page.waitForFunction(() => window.codexDesign?.ready, { timeout: 60000 });
   if (await page.locator('.project.active').getAttribute('data-id') !== id) throw new Error(`Project not found: ${id}`);
   await page.evaluate(() => window.codexDesign.setTime(0));
-  const presets = opts.preset === 'all' ? await page.evaluate(() => window.codexDesign.gfxPresets) : [opts.preset ?? 'card'], out = fileURLToPath(new URL('../exports/', import.meta.url)), files = [];
+  const presets = opts.preset === 'all' ? await page.evaluate(() => window.codexDesign.gfxPresets) : opts.preset === 'showcase' ? ['hero-render', 'studio-premium', 'clay', 'wireframe-pro', 'topology-inspection', 'material-breakdown'] : String(opts.preset ?? 'card').split(','), out = fileURLToPath(new URL('../exports/', import.meta.url)), files = [];
   await mkdir(out, { recursive: true });
   for (const preset of presets) {
     if (video) { const r = await page.evaluate(o => window.codexDesign.gfxVideo(o), { ...opts, preset, video, ...(animation !== undefined ? { animation } : {}) }); files.push({ preset, file: path.join(out, path.basename(r.file)), frames: r.frames, bytes: r.bytes }); continue; }
-    const r = await page.evaluate(o => window.codexDesign.gfx(o), { ...opts, preset }); const file = `${out}${id}.gfx-${preset}.png`; await writeFile(file, Buffer.from(r.base64, 'base64')); files.push({ preset, file, width: r.width, height: r.height });
+    const r = await page.evaluate(o => window.codexDesign.gfx(o), { ...opts, preset }); const file = `${out}${id}.gfx-${preset}.png`; await writeFile(file, markPNG(new Uint8Array(Buffer.from(r.base64, 'base64')))); files.push({ preset, file, width: r.width, height: r.height });
   }
   console.log(JSON.stringify({ files, errors }, null, 2)); if (errors.length) process.exitCode = 1;
 } finally { await browser.close(); }

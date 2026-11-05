@@ -1,0 +1,134 @@
+{
+ "name": "SdkFrostNova",
+ "description": "SDK demo: frost nova",
+ "duration": 1,
+ "loop": false,
+ "layers": [
+  {
+   "type": "emitter",
+   "name": "Mist",
+   "texture": {
+    "src": "assets/vfx/vfx-pack0/puff-and-stars/flipbook.png",
+    "grid": 8,
+    "library": "vfx-pack0/puff-and-stars"
+   },
+   "props": {
+    "Lifetime": [
+     1.333,
+     1.333
+    ],
+    "Speed": [
+     0,
+     0
+    ],
+    "Size": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      9
+     ]
+    ],
+    "Transparency": [
+     [
+      0,
+      0.2
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "LightEmission": 1,
+    "LightInfluence": 0,
+    "FlipbookLayout": "Grid8x8",
+    "FlipbookMode": "Loop",
+    "FlipbookFramerate": [
+     48.01,
+     48.01
+    ],
+    "ZOffset": 0.5,
+    "Color": "#cfefff"
+   },
+   "emit": {
+    "mode": "burst",
+    "bursts": [
+     {
+      "t": 0,
+      "count": 6
+     }
+    ]
+   }
+  },
+  {
+   "type": "emitter",
+   "name": "Ring",
+   "texture": {
+    "src": "vfx/textures/shockwave-9fe3ff-4x4-s3.png",
+    "generated": {
+     "kind": "shockwave",
+     "grid": 4,
+     "color": "#9fe3ff",
+     "seed": 3
+    },
+    "grid": 4
+   },
+   "props": {
+    "Lifetime": [
+     0.5,
+     0.5
+    ],
+    "Speed": [
+     0,
+     0
+    ],
+    "Size": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      14
+     ]
+    ],
+    "FlipbookLayout": "Grid4x4",
+    "FlipbookMode": "OneShot",
+    "LightEmission": 1,
+    "LightInfluence": 0,
+    "Orientation": "VelocityPerpendicular",
+    "EmissionDirection": "Top"
+   },
+   "emit": {
+    "mode": "burst",
+    "bursts": [
+     {
+      "t": 0,
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "type": "light",
+   "name": "Glow",
+   "class": "PointLight",
+   "props": {
+    "Color": "#8fdcff",
+    "Brightness": 5,
+    "Range": 20
+   },
+   "duration": 0.5,
+   "anim": [
+    {
+     "prop": "Brightness",
+     "from": 5,
+     "to": 0,
+     "time": 0.5
+    }
+   ]
+  }
+ ]
+}

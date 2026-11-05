@@ -1,5 +1,5 @@
 {
-  "about": "Reference catalog for Train/. Codex Design reads this with docs/TRAINING.md. Files stay where the user put them; this file sorts them. Every folder has a TRAIN.md. Categories: stud, voxel-stud, gradient, gfx, simulator-style, texture.",
+  "about": "Reference catalog for Train/. Codex Design reads this with docs/TRAINING.md. Files stay where the user put them; this file sorts them. Every folder has a TRAIN.md. Categories: stud, voxel-stud, gradient, gfx, simulator-style, texture, vfx.",
   "folders": {
     "StudTrain": {
       "category": "stud",
@@ -24,6 +24,10 @@
     "TopologyTrain": {
       "category": "topology",
       "use": "No images: SIMP + CNN background and smart quad topology rules in TRAIN.md."
+    },
+    "VfxTrain": {
+      "category": "vfx",
+      "use": "Roblox VFX Studio knowledge. Library built from the user's VfxPack0/1/2 (Downloads) into assets/vfx/ (63 Roblox flipbooks + 93 particle textures, library.json with licenses and suggested emitter settings)."
     }
   },
   "StudGradientModelKarisik": {

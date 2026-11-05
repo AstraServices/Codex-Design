@@ -13,6 +13,7 @@ import { vertexAO } from './paint.js';
 import { rebakeSurface, initSurface } from './surface.js';
 import { LOOK_DEFAULTS, LOOK_NAMES, LIGHT_DEFAULTS, compileGradient } from './look.js';
 import * as texlab from './texlab.js';
+import { smartUV, uvStats } from './uv.js';
 import { topologyOptimize, TOPOLOGY_CASES, densityMesh } from './topopt.js';
 import { pbrSurface, PBR_EXAMPLE_NAMES } from './pbr.js';
 
@@ -129,6 +130,8 @@ export function createKit(parameters = {}) {
     const object=mesh(name,geo,null,mats,placement);object.userData.robloxPart={size,color,surface,top,bottom};return object;
   }
   /** Apply box-projected UVs so tiling textures keep one UV unit per stud (default) on any size. */
+  // Automatic UV unwrapping (smart UV project): k.autoUV(meshOrGroup,{angle:66,margin:0.004}) → uvStats per mesh
+  const autoUV=(target,opts={})=>{const out=[];const run=m=>{if(!m.isMesh)return;const g=smartUV(m.geometry,opts);m.geometry.dispose?.();m.geometry=g;out.push({mesh:m.name,...uvStats(g)});};typeof target==='string'?k.root.getObjectByName(target)?.traverse(run):target.isMesh?run(target):target.traverse(run);return out;};
   const worldUV=(target,tile=tex.STUD)=>{const geo=target.isMesh?target.geometry:target;tex.worldUV(geo,tile);return target;};
   /** 3D extruded icon from the bundled packs (query or path). Use sparingly: emblems, pickups, signage. */
   async function iconBadge(name,query,options={}) {
@@ -244,7 +247,7 @@ export function createKit(parameters = {}) {
     smartTopology:(intent='auto',options={})=>smartTopology(root,{intent,...options}),
     highlight,highlights:()=>collectHighlights(root),edges,edgeOutlines:()=>collectEdges(root),
     STUD:tex.STUD,ROBLOX_MATERIALS:tex.ROBLOX_MATERIALS,STUD_STYLES:tex.STUD_STYLES,texture:tex.texture,pixelTexture:tex.pixelTexture,dataTexture:tex.dataTexture,normalFromHeight:tex.normalFromHeight,noise:tex.noise,fbm:tex.fbm,
-    pbr,studMaterial,robloxMaterial,part,worldUV,block,voxels,paint,surface:paint,gradient,look,LOOKS:LOOK_NAMES,LOOK_DEFAULTS,rgb01,compileGradient,tex:texlab,topologyOptimize,topologyPart,TOPOLOGY_CASES,pbrSurface:(def,o)=>pbrSurface(def,o),PBR_EXAMPLES:PBR_EXAMPLE_NAMES,iconBadge,iconPlane,decal,findAssets:tex.findAssets,asset:tex.resolveAsset,iconShapes:tex.iconShapes};
+    pbr,studMaterial,robloxMaterial,part,worldUV,autoUV,uvStats,block,voxels,paint,surface:paint,gradient,look,LOOKS:LOOK_NAMES,LOOK_DEFAULTS,rgb01,compileGradient,tex:texlab,topologyOptimize,topologyPart,TOPOLOGY_CASES,pbrSurface:(def,o)=>pbrSurface(def,o),PBR_EXAMPLES:PBR_EXAMPLE_NAMES,iconBadge,iconPlane,decal,findAssets:tex.findAssets,asset:tex.resolveAsset,iconShapes:tex.iconShapes};
 }
 
 export function inspectAsset(root,clips=[]) {

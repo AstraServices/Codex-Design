@@ -1,0 +1,3820 @@
+{
+ "about": "Roblox VFX library (imported packs). Each flipbook is a 1024x1024 Roblox-ready atlas. Read Train/VfxTrain/TRAIN.md before using.",
+ "effects": [
+  {
+   "id": "vfx-pack0/anima",
+   "pack": "vfx-pack0",
+   "name": "Anima",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/anima/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/anima/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    437,
+    437
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Anima/30fps/Frames/Effect_Anima_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/big-hit",
+   "pack": "vfx-pack0",
+   "name": "BigHit",
+   "tags": [
+    "impact"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/big-hit/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/big-hit/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    557,
+    553
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 0.6,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_BigHit/30fps/Frames/Effect_BigHit_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/blood-impact",
+   "pack": "vfx-pack0",
+   "name": "BloodImpact",
+   "tags": [
+    "impact"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/blood-impact/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/blood-impact/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    69,
+    60
+   ],
+   "pixelArt": true,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 0.6,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 64.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_BloodImpact/30fps/Frames/Effect_BloodImpact_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/charged",
+   "pack": "vfx-pack0",
+   "name": "Charged",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/charged/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/charged/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 40,
+   "sourceFps": 30,
+   "sourceSize": [
+    321,
+    371
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.333,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 12.0,
+    "lifetime": 1.333
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Charged/30fps/Frames/Effect_Charged_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/constellation",
+   "pack": "vfx-pack0",
+   "name": "Constellation",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/constellation/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/constellation/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    299,
+    313
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Constellation/30fps/Frames/Effect_Constellation_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/dithered-fire",
+   "pack": "vfx-pack0",
+   "name": "DitheredFire",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/dithered-fire/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/dithered-fire/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    517,
+    246
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_DitheredFire/30fps/Frames/Effect_DitheredFire_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/elden-ring",
+   "pack": "vfx-pack0",
+   "name": "EldenRing",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/elden-ring/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/elden-ring/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    421,
+    425
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_EldenRing/30fps/Frames/Effect_EldenRing_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/electric-shield",
+   "pack": "vfx-pack0",
+   "name": "ElectricShield",
+   "tags": [
+    "electric"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/electric-shield/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/electric-shield/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    265,
+    265
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_ElectricShield/30fps/Frames/Effect_ElectricShield_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/explosion",
+   "pack": "vfx-pack0",
+   "name": "Explosion",
+   "tags": [
+    "explosion"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/explosion/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/explosion/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    517,
+    517
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Explosion/30fps/Frames/Effect_Explosion_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/explosion2",
+   "pack": "vfx-pack0",
+   "name": "Explosion2",
+   "tags": [
+    "explosion"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/explosion2/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/explosion2/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    355,
+    355
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Explosion2/30fps/Frames/Effect_Explosion2_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/fast-pixel-fire",
+   "pack": "vfx-pack0",
+   "name": "FastPixelFire",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/fast-pixel-fire/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/fast-pixel-fire/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    173,
+    193
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_FastPixelFire/30fps/Frames/Effect_FastPixelFire_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/hyperspeed",
+   "pack": "vfx-pack0",
+   "name": "Hyperspeed",
+   "tags": [
+    "speed"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/hyperspeed/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/hyperspeed/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    517,
+    515
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Hyperspeed/30fps/Frames/Effect_Hyperspeed_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/impact",
+   "pack": "vfx-pack0",
+   "name": "Impact",
+   "tags": [
+    "impact"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/impact/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/impact/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    291,
+    301
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 0.6,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Impact/30fps/Frames/Effect_Impact_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/kabooms",
+   "pack": "vfx-pack0",
+   "name": "Kabooms",
+   "tags": [
+    "explosion"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/kabooms/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/kabooms/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    401,
+    325
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Kabooms/30fps/Frames/Effect_Kabooms_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/magma",
+   "pack": "vfx-pack0",
+   "name": "Magma",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/magma/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/magma/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    381,
+    186
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Magma/30fps/Frames/Effect_Magma_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/power-chords",
+   "pack": "vfx-pack0",
+   "name": "PowerChords",
+   "tags": [
+    "electric"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/power-chords/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/power-chords/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    517,
+    353
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_PowerChords/30fps/Frames/Effect_PowerChords_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/puff-and-stars",
+   "pack": "vfx-pack0",
+   "name": "PuffAndStars",
+   "tags": [
+    "magic",
+    "smoke"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/puff-and-stars/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/puff-and-stars/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 40,
+   "sourceFps": 30,
+   "sourceSize": [
+    120,
+    109
+   ],
+   "pixelArt": true,
+   "alphaFromLuminance": false,
+   "duration": 1.333,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 48.01,
+    "lifetime": 1.333
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_PuffAndStars/30fps/Frames/Effect_PuffAndStars_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/small-hit",
+   "pack": "vfx-pack0",
+   "name": "SmallHit",
+   "tags": [
+    "impact"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/small-hit/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/small-hit/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    532,
+    528
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 0.6,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_SmallHit/30fps/Frames/Effect_SmallHit_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/tentacles",
+   "pack": "vfx-pack0",
+   "name": "Tentacles",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/tentacles/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/tentacles/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    453,
+    337
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Tentacles/30fps/Frames/Effect_Tentacles_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/the-vortex",
+   "pack": "vfx-pack0",
+   "name": "TheVortex",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/the-vortex/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/the-vortex/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    427,
+    431
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_TheVortex/30fps/Frames/Effect_TheVortex_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/wheel",
+   "pack": "vfx-pack0",
+   "name": "Wheel",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/wheel/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/wheel/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    273,
+    273
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Wheel/30fps/Frames/Effect_Wheel_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack0/worm",
+   "pack": "vfx-pack0",
+   "name": "Worm",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack0/worm/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack0/worm/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    413,
+    369
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CodeManu VFX Free Pack (itch.io); the same art ships under CC0 in the Brackeys VFX bundle (credits: CodeManu)",
+   "source": "VfxPack0/Effect_Worm/30fps/Frames/Effect_Worm_1",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/bonfire",
+   "pack": "vfx-pack1",
+   "name": "Bonfire",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/bonfire/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/bonfire/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Bonfire/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/butterfly",
+   "pack": "vfx-pack1",
+   "name": "Butterfly",
+   "tags": [
+    "nature"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/butterfly/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/butterfly/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 1,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Butterfly/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/dizzy",
+   "pack": "vfx-pack1",
+   "name": "Dizzy",
+   "tags": [
+    "ui"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/dizzy/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/dizzy/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Dizzy/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/fire-flies",
+   "pack": "vfx-pack1",
+   "name": "FireFlies",
+   "tags": [
+    "fire",
+    "nature"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/fire-flies/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/fire-flies/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/FireFlies/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/gas-burner",
+   "pack": "vfx-pack1",
+   "name": "GasBurner",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/gas-burner/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/gas-burner/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 8,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.333,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 48.05,
+    "lifetime": 0.333
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/GasBurner/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/green-portal",
+   "pack": "vfx-pack1",
+   "name": "Green Portal",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/green-portal/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/green-portal/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Green Portal.zip",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/heal",
+   "pack": "vfx-pack1",
+   "name": "Heal",
+   "tags": [
+    "heal"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/heal/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/heal/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Heal/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/leaves-falling",
+   "pack": "vfx-pack1",
+   "name": "Leaves Falling",
+   "tags": [
+    "nature"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/leaves-falling/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/leaves-falling/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 15,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.625,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 1,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 25.6,
+    "lifetime": 0.625
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Leaves Falling/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/portals-v2",
+   "pack": "vfx-pack1",
+   "name": "Portals v2",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/portals-v2/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/portals-v2/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Portals v2.zip",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/quest",
+   "pack": "vfx-pack1",
+   "name": "Quest",
+   "tags": [
+    "ui"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/quest/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/quest/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Quest/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/quest-complete",
+   "pack": "vfx-pack1",
+   "name": "Quest Complete",
+   "tags": [
+    "ui"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/quest-complete/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/quest-complete/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Quest Complete/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/shield-aura",
+   "pack": "vfx-pack1",
+   "name": "Shield Aura",
+   "tags": [
+    "magic",
+    "electric"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/shield-aura/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/shield-aura/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 7,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.292,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 54.79,
+    "lifetime": 0.292
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Shield Aura/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/smoke",
+   "pack": "vfx-pack1",
+   "name": "Smoke",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/smoke/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/smoke/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 8,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.333,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 1,
+    "mode": "OneShot",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 48.05,
+    "lifetime": 0.333
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Smoke/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/sword-slash",
+   "pack": "vfx-pack1",
+   "name": "Sword Slash",
+   "tags": [
+    "speed"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/sword-slash/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/sword-slash/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Sword Slash/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack1/torch",
+   "pack": "vfx-pack1",
+   "name": "Torch",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack1/torch/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack1/torch/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 16,
+   "sourceFps": 24,
+   "sourceSize": [
+    512,
+    512
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.667,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 23.99,
+    "lifetime": 0.667
+   },
+   "license": "Unknown (no license file in the pack) - verify the source before commercial use",
+   "source": "VfxPack1/Torch/",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/big-hit",
+   "pack": "vfx-pack2",
+   "name": "big_hit",
+   "tags": [
+    "impact"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/big-hit/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/big-hit/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 11,
+   "sourceFps": 30,
+   "sourceSize": [
+    557,
+    553
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.367,
+   "suggest": {
+    "lightEmission": 0.6,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 43.6,
+    "lifetime": 0.367
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/big_hit_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/blood-impact",
+   "pack": "vfx-pack2",
+   "name": "blood_impact",
+   "tags": [
+    "impact"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/blood-impact/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/blood-impact/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 24,
+   "sourceFps": 30,
+   "sourceSize": [
+    69,
+    60
+   ],
+   "pixelArt": true,
+   "alphaFromLuminance": false,
+   "duration": 0.8,
+   "suggest": {
+    "lightEmission": 0.6,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 80.0,
+    "lifetime": 0.8
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/blood_impact_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/cloud-01",
+   "pack": "vfx-pack2",
+   "name": "cloud_01",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/cloud-01/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/cloud-01/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 1,
+    "mode": "OneShot",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/cloud_01_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/cloud-02",
+   "pack": "vfx-pack2",
+   "name": "cloud_02",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/cloud-02/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/cloud-02/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 1,
+    "mode": "OneShot",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/cloud_02_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/dithered-fire",
+   "pack": "vfx-pack2",
+   "name": "dithered_fire",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/dithered-fire/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/dithered-fire/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    517,
+    246
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/dithered_fire_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/electric-ring",
+   "pack": "vfx-pack2",
+   "name": "electric_ring",
+   "tags": [
+    "electric"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/electric-ring/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/electric-ring/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    265,
+    265
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/electric_ring_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/explosion",
+   "pack": "vfx-pack2",
+   "name": "explosion",
+   "tags": [
+    "explosion"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/explosion/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/explosion/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 26,
+   "sourceFps": 30,
+   "sourceSize": [
+    355,
+    355
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.867,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 18.45,
+    "lifetime": 0.867
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/explosion_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/explosion-01",
+   "pack": "vfx-pack2",
+   "name": "explosion_01",
+   "tags": [
+    "explosion"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/explosion-01/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/explosion-01/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/explosion_01_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/explosion-02",
+   "pack": "vfx-pack2",
+   "name": "explosion_02",
+   "tags": [
+    "explosion"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/explosion-02/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/explosion-02/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/explosion_02_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/explosion-smoke-01",
+   "pack": "vfx-pack2",
+   "name": "explosion_smoke_01",
+   "tags": [
+    "explosion",
+    "smoke"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/explosion-smoke-01/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/explosion-smoke-01/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/explosion_smoke_01_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/fire-01",
+   "pack": "vfx-pack2",
+   "name": "fire_01",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/fire-01/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/fire-01/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/fire_01_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/fire-02",
+   "pack": "vfx-pack2",
+   "name": "fire_02",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/fire-02/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/fire-02/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/fire_02_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/fire-03",
+   "pack": "vfx-pack2",
+   "name": "fire_03",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/fire-03/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/fire-03/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/fire_03_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/fire-04",
+   "pack": "vfx-pack2",
+   "name": "fire_04",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/fire-04/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/fire-04/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/fire_04_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/fire-point",
+   "pack": "vfx-pack2",
+   "name": "fire_point",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/fire-point/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/fire-point/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    173,
+    193
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/fire_point_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/fire-ring",
+   "pack": "vfx-pack2",
+   "name": "fire_ring",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/fire-ring/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/fire-ring/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    421,
+    425
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/fire_ring_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/flame-01",
+   "pack": "vfx-pack2",
+   "name": "flame_01",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/flame-01/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/flame-01/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    256
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/flame_01_16x4.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/flame-02",
+   "pack": "vfx-pack2",
+   "name": "flame_02",
+   "tags": [
+    "fire"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/flame-02/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/flame-02/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 60,
+   "sourceFps": 30,
+   "sourceSize": [
+    136,
+    256
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 32.0,
+    "lifetime": 2.0
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/flame_02_15x4.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/impact-white",
+   "pack": "vfx-pack2",
+   "name": "impact_white",
+   "tags": [
+    "impact"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/impact-white/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/impact-white/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 15,
+   "sourceFps": 30,
+   "sourceSize": [
+    291,
+    376
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 0.5,
+   "suggest": {
+    "lightEmission": 0.6,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 32.0,
+    "lifetime": 0.5
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/impact_white_6x4.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/star-explosion",
+   "pack": "vfx-pack2",
+   "name": "star_explosion",
+   "tags": [
+    "explosion",
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/star-explosion/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/star-explosion/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 26,
+   "sourceFps": 30,
+   "sourceSize": [
+    140,
+    130
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.867,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "OneShot",
+    "kind": "burst",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 73.82,
+    "lifetime": 0.867
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/star_explosion_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/vortex",
+   "pack": "vfx-pack2",
+   "name": "vortex",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/vortex/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/vortex/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 24,
+   "sourceFps": 30,
+   "sourceSize": [
+    427,
+    431
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 0.8,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 20.0,
+    "lifetime": 0.8
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/vortex_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/wavy-blue",
+   "pack": "vfx-pack2",
+   "name": "wavy_blue",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/wavy-blue/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/wavy-blue/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    437,
+    437
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/wavy_blue_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/wavy-purple",
+   "pack": "vfx-pack2",
+   "name": "wavy_purple",
+   "tags": [
+    "magic"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/wavy-purple/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/wavy-purple/thumb.png",
+   "layout": "Grid4x4",
+   "grid": 4,
+   "frames": 16,
+   "sourceFrames": 30,
+   "sourceFps": 30,
+   "sourceSize": [
+    453,
+    337
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": true,
+   "duration": 1.0,
+   "suggest": {
+    "lightEmission": 1,
+    "lightInfluence": 0,
+    "mode": "Loop",
+    "kind": "loop",
+    "flipbookLayout": "Grid4x4",
+    "flipbookFramerate": 16.0,
+    "lifetime": 1.0
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/predrawn/wavy_purple_6x5.png",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/wispy-smoke-01",
+   "pack": "vfx-pack2",
+   "name": "wispy_smoke_01",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/wispy-smoke-01/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/wispy-smoke-01/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 1,
+    "mode": "OneShot",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/wispy_smoke_01_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/wispy-smoke-02",
+   "pack": "vfx-pack2",
+   "name": "wispy_smoke_02",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/wispy-smoke-02/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/wispy-smoke-02/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 1,
+    "mode": "OneShot",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/wispy_smoke_02_8x8.tga",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/wispy-smoke-03",
+   "pack": "vfx-pack2",
+   "name": "wispy_smoke_03",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "flipbook",
+   "texture": "assets/vfx/vfx-pack2/wispy-smoke-03/flipbook.png",
+   "thumb": "assets/vfx/vfx-pack2/wispy-smoke-03/thumb.png",
+   "layout": "Grid8x8",
+   "grid": 8,
+   "frames": 64,
+   "sourceFrames": 64,
+   "sourceFps": 30,
+   "sourceSize": [
+    128,
+    128
+   ],
+   "pixelArt": false,
+   "alphaFromLuminance": false,
+   "duration": 2.133,
+   "suggest": {
+    "lightEmission": 0,
+    "lightInfluence": 1,
+    "mode": "OneShot",
+    "kind": "loop",
+    "flipbookLayout": "Grid8x8",
+    "flipbookFramerate": 30.0,
+    "lifetime": 2.133
+   },
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "source": "VfxPack2/flipbooks/wispy_smoke_03_8x8.tga",
+   "robloxReady": true
+  }
+ ],
+ "particles": [
+  {
+   "id": "vfx-pack2/particles/circle-01",
+   "pack": "vfx-pack2",
+   "name": "circle_01",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/circle-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/circle-02",
+   "pack": "vfx-pack2",
+   "name": "circle_02",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/circle-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/circle-03",
+   "pack": "vfx-pack2",
+   "name": "circle_03",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/circle-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/circle-04",
+   "pack": "vfx-pack2",
+   "name": "circle_04",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/circle-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/circle-05",
+   "pack": "vfx-pack2",
+   "name": "circle_05",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/circle-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/dirt-01",
+   "pack": "vfx-pack2",
+   "name": "dirt_01",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/dirt-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/dirt-02",
+   "pack": "vfx-pack2",
+   "name": "dirt_02",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/dirt-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/dirt-03",
+   "pack": "vfx-pack2",
+   "name": "dirt_03",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/dirt-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/effect-01",
+   "pack": "vfx-pack2",
+   "name": "effect_01",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/effect-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/effect-02",
+   "pack": "vfx-pack2",
+   "name": "effect_02",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/effect-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/effect-03",
+   "pack": "vfx-pack2",
+   "name": "effect_03",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/effect-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/fire-01",
+   "pack": "vfx-pack2",
+   "name": "fire_01",
+   "tags": [
+    "fire"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/fire-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/fire-02",
+   "pack": "vfx-pack2",
+   "name": "fire_02",
+   "tags": [
+    "fire"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/fire-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/flame-01",
+   "pack": "vfx-pack2",
+   "name": "flame_01",
+   "tags": [
+    "fire"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/flame-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/flame-02",
+   "pack": "vfx-pack2",
+   "name": "flame_02",
+   "tags": [
+    "fire"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/flame-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/flame-03",
+   "pack": "vfx-pack2",
+   "name": "flame_03",
+   "tags": [
+    "fire"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/flame-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/flame-04",
+   "pack": "vfx-pack2",
+   "name": "flame_04",
+   "tags": [
+    "fire"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/flame-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/flame-05",
+   "pack": "vfx-pack2",
+   "name": "flame_05",
+   "tags": [
+    "fire"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/flame-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/flame-06",
+   "pack": "vfx-pack2",
+   "name": "flame_06",
+   "tags": [
+    "fire"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/flame-06.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/flare-01",
+   "pack": "vfx-pack2",
+   "name": "flare_01",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/flare-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/light-01",
+   "pack": "vfx-pack2",
+   "name": "light_01",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/light-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/light-02",
+   "pack": "vfx-pack2",
+   "name": "light_02",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/light-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/light-03",
+   "pack": "vfx-pack2",
+   "name": "light_03",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/light-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/magic-01",
+   "pack": "vfx-pack2",
+   "name": "magic_01",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/magic-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/magic-02",
+   "pack": "vfx-pack2",
+   "name": "magic_02",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/magic-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/magic-03",
+   "pack": "vfx-pack2",
+   "name": "magic_03",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/magic-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/magic-04",
+   "pack": "vfx-pack2",
+   "name": "magic_04",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/magic-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/magic-05",
+   "pack": "vfx-pack2",
+   "name": "magic_05",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/magic-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/muzzle-01",
+   "pack": "vfx-pack2",
+   "name": "muzzle_01",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/muzzle-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/muzzle-02",
+   "pack": "vfx-pack2",
+   "name": "muzzle_02",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/muzzle-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/muzzle-03",
+   "pack": "vfx-pack2",
+   "name": "muzzle_03",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/muzzle-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/muzzle-04",
+   "pack": "vfx-pack2",
+   "name": "muzzle_04",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/muzzle-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/muzzle-05",
+   "pack": "vfx-pack2",
+   "name": "muzzle_05",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/muzzle-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/scorch-01",
+   "pack": "vfx-pack2",
+   "name": "scorch_01",
+   "tags": [
+    "impact"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/scorch-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/scorch-02",
+   "pack": "vfx-pack2",
+   "name": "scorch_02",
+   "tags": [
+    "impact"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/scorch-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/scorch-03",
+   "pack": "vfx-pack2",
+   "name": "scorch_03",
+   "tags": [
+    "impact"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/scorch-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/scratch-01",
+   "pack": "vfx-pack2",
+   "name": "scratch_01",
+   "tags": [
+    "misc"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/scratch-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/slash-01",
+   "pack": "vfx-pack2",
+   "name": "slash_01",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/slash-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/slash-02",
+   "pack": "vfx-pack2",
+   "name": "slash_02",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/slash-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/slash-03",
+   "pack": "vfx-pack2",
+   "name": "slash_03",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/slash-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/slash-04",
+   "pack": "vfx-pack2",
+   "name": "slash_04",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/slash-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-01",
+   "pack": "vfx-pack2",
+   "name": "smoke_01",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-02",
+   "pack": "vfx-pack2",
+   "name": "smoke_02",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-03",
+   "pack": "vfx-pack2",
+   "name": "smoke_03",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-04",
+   "pack": "vfx-pack2",
+   "name": "smoke_04",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-05",
+   "pack": "vfx-pack2",
+   "name": "smoke_05",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-06",
+   "pack": "vfx-pack2",
+   "name": "smoke_06",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-06.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-07",
+   "pack": "vfx-pack2",
+   "name": "smoke_07",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-07.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-07-strong",
+   "pack": "vfx-pack2",
+   "name": "smoke_07_strong",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-07-strong.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-08",
+   "pack": "vfx-pack2",
+   "name": "smoke_08",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-08.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-09",
+   "pack": "vfx-pack2",
+   "name": "smoke_09",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-09.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/smoke-10",
+   "pack": "vfx-pack2",
+   "name": "smoke_10",
+   "tags": [
+    "smoke"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/smoke-10.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spark-01",
+   "pack": "vfx-pack2",
+   "name": "spark_01",
+   "tags": [
+    "electric"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spark-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spark-02",
+   "pack": "vfx-pack2",
+   "name": "spark_02",
+   "tags": [
+    "electric"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spark-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spark-03",
+   "pack": "vfx-pack2",
+   "name": "spark_03",
+   "tags": [
+    "electric"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spark-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spark-04",
+   "pack": "vfx-pack2",
+   "name": "spark_04",
+   "tags": [
+    "electric"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spark-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spark-05",
+   "pack": "vfx-pack2",
+   "name": "spark_05",
+   "tags": [
+    "electric"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spark-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spark-06",
+   "pack": "vfx-pack2",
+   "name": "spark_06",
+   "tags": [
+    "electric"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spark-06.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spark-07",
+   "pack": "vfx-pack2",
+   "name": "spark_07",
+   "tags": [
+    "electric"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spark-07.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spotlight-01",
+   "pack": "vfx-pack2",
+   "name": "spotlight_01",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spotlight-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spotlight-02",
+   "pack": "vfx-pack2",
+   "name": "spotlight_02",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spotlight-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spotlight-03",
+   "pack": "vfx-pack2",
+   "name": "spotlight_03",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spotlight-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spotlight-04",
+   "pack": "vfx-pack2",
+   "name": "spotlight_04",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spotlight-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spotlight-05",
+   "pack": "vfx-pack2",
+   "name": "spotlight_05",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spotlight-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spotlight-06",
+   "pack": "vfx-pack2",
+   "name": "spotlight_06",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spotlight-06.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spotlight-07",
+   "pack": "vfx-pack2",
+   "name": "spotlight_07",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spotlight-07.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/spotlight-08",
+   "pack": "vfx-pack2",
+   "name": "spotlight_08",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/spotlight-08.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-01",
+   "pack": "vfx-pack2",
+   "name": "star_01",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-02",
+   "pack": "vfx-pack2",
+   "name": "star_02",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-03",
+   "pack": "vfx-pack2",
+   "name": "star_03",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-04",
+   "pack": "vfx-pack2",
+   "name": "star_04",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-05",
+   "pack": "vfx-pack2",
+   "name": "star_05",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-06",
+   "pack": "vfx-pack2",
+   "name": "star_06",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-06.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-07",
+   "pack": "vfx-pack2",
+   "name": "star_07",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-07.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-08",
+   "pack": "vfx-pack2",
+   "name": "star_08",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-08.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/star-09",
+   "pack": "vfx-pack2",
+   "name": "star_09",
+   "tags": [
+    "magic"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/star-09.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/symbol-01",
+   "pack": "vfx-pack2",
+   "name": "symbol_01",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/symbol-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/symbol-02",
+   "pack": "vfx-pack2",
+   "name": "symbol_02",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/symbol-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/trace-01",
+   "pack": "vfx-pack2",
+   "name": "trace_01",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/trace-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/trace-02",
+   "pack": "vfx-pack2",
+   "name": "trace_02",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/trace-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/trace-03",
+   "pack": "vfx-pack2",
+   "name": "trace_03",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/trace-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/trace-04",
+   "pack": "vfx-pack2",
+   "name": "trace_04",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/trace-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/trace-05",
+   "pack": "vfx-pack2",
+   "name": "trace_05",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/trace-05.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/trace-06",
+   "pack": "vfx-pack2",
+   "name": "trace_06",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/trace-06.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/trace-07",
+   "pack": "vfx-pack2",
+   "name": "trace_07",
+   "tags": [
+    "speed"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/trace-07.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/twirl-01",
+   "pack": "vfx-pack2",
+   "name": "twirl_01",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/twirl-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/twirl-02",
+   "pack": "vfx-pack2",
+   "name": "twirl_02",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/twirl-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/twirl-03",
+   "pack": "vfx-pack2",
+   "name": "twirl_03",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/twirl-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/twirl-04",
+   "pack": "vfx-pack2",
+   "name": "twirl_04",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/twirl-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": true,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/window-01",
+   "pack": "vfx-pack2",
+   "name": "window_01",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/window-01.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/window-02",
+   "pack": "vfx-pack2",
+   "name": "window_02",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/window-02.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/window-03",
+   "pack": "vfx-pack2",
+   "name": "window_03",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/window-03.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  },
+  {
+   "id": "vfx-pack2/particles/window-04",
+   "pack": "vfx-pack2",
+   "name": "window_04",
+   "tags": [
+    "light"
+   ],
+   "kind": "particle",
+   "texture": "assets/vfx/vfx-pack2/particles/window-04.png",
+   "size": [
+    512,
+    512
+   ],
+   "alphaFromLuminance": false,
+   "license": "CC0 (Brackeys VFX bundle: Picster, Kenney, Thomas Iche, CodeManu)",
+   "robloxReady": true
+  }
+ ],
+ "skipped": [
+  {
+   "pack": "vfx-pack1",
+   "name": "Dizzy",
+   "reason": "duplicate of an imported effect"
+  },
+  {
+   "pack": "vfx-pack1",
+   "name": "Heal",
+   "reason": "duplicate of an imported effect"
+  },
+  {
+   "pack": "vfx-pack2",
+   "name": "charge",
+   "reason": "duplicate of an imported effect"
+  },
+  {
+   "pack": "vfx-pack2",
+   "name": "lightstreaks",
+   "reason": "duplicate of an imported effect"
+  }
+ ]
+}

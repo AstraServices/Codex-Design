@@ -1,0 +1,25 @@
+{
+ "name": "volcanic-rock",
+ "description": "Stylized volcanic rock: dark basalt plates, glowing orange cracks, rough chipped edges. Roblox-compatible PBR (1024).",
+ "seed": 7,
+ "normalStrength": 6,
+ "nodes": [
+  { "id": "plates", "type": "worley", "params": { "scale": 5, "mode": "edge", "jitter": 0.95, "warp": 0.08 }, "x": 40, "y": 40 },
+  { "id": "cracks", "type": "cracks", "params": { "scale": 5, "width": 0.05, "warp": 0.08 }, "x": 40, "y": 190 },
+  { "id": "detail", "type": "fbm", "params": { "scale": 8, "octaves": 6 }, "x": 40, "y": 340 },
+  { "id": "chips", "type": "ridged", "params": { "scale": 6, "octaves": 4, "seed": 3 }, "x": 40, "y": 490 },
+  { "id": "plateH", "type": "levels", "params": { "inLow": 0, "inHigh": 0.35, "gamma": 0.8 }, "inputs": { "in": "plates" }, "x": 280, "y": 40 },
+  { "id": "height0", "type": "blend", "params": { "mode": "multiply", "opacity": 0.35 }, "inputs": { "a": "plateH", "b": "detail" }, "x": 500, "y": 120 },
+  { "id": "height", "type": "blend", "params": { "mode": "subtract", "opacity": 0.25 }, "inputs": { "a": "height0", "b": "chips" }, "x": 720, "y": 160 },
+  { "id": "rockColor", "type": "colorRamp", "params": { "stops": [[0, "#161314"], [0.5, "#2b2627"], [0.85, "#463e3d"], [1, "#5e5350"]] }, "inputs": { "in": "height" }, "x": 940, "y": 60 },
+  { "id": "lava", "type": "colorRamp", "params": { "stops": [[0, "#b8230a"], [0.6, "#ff7a1a"], [1, "#ffd36b"]] }, "inputs": { "in": "detail" }, "x": 940, "y": 260 },
+  { "id": "albedo", "type": "blend", "params": { "mode": "mix", "opacity": 1 }, "inputs": { "a": "rockColor", "b": "lava", "mask": "cracks" }, "x": 1160, "y": 140 },
+  { "id": "glow", "type": "blend", "params": { "mode": "multiply", "opacity": 1 }, "inputs": { "a": "lava", "b": "cracks" }, "x": 1160, "y": 300 },
+  { "id": "edges", "type": "weathering", "params": { "kind": "edgeWear", "amount": 0.6, "breakup": 0.4 }, "inputs": { "height": "height" }, "x": 940, "y": 440 },
+  { "id": "rough", "type": "blend", "params": { "mode": "mix", "opacity": 0.6 }, "inputs": { "a": "roughBase", "b": "roughCrack", "mask": "cracks" }, "x": 1160, "y": 460 },
+  { "id": "roughBase", "type": "levels", "params": { "outLow": 0.72, "outHigh": 0.95 }, "inputs": { "in": "detail" }, "x": 720, "y": 400 },
+  { "id": "roughCrack", "type": "value", "params": { "value": 0.35 }, "x": 720, "y": 540 }
+ ],
+ "outputs": { "baseColor": "albedo", "height": "height", "roughness": "rough", "emissive": "glow" },
+ "metalness": 0
+}

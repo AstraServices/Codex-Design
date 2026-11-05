@@ -9,9 +9,11 @@ follows + engine code that encodes it. Say so if a user asks.
 | Stud textures | `Train/StudTrain/TRAIN.md` | `k.part`, `studs:'train'` |
 | Stud Nature video (look measurements, 20 sharp frames) | `Train/StudveGradientVideo/TRAIN.md` | `look:'stud-nature'`, `k.voxels` |
 | Gradients: surface light **and** designed color gradients | `Train/GradientTrain/TRAIN.md` | `k.gradient`, `gradient:` option |
-| GFX (19 presets, watermark, MP4/GIF, background photo) | `Train/GfxTrain/TRAIN.md` | ✧ GFX Studio, `npm run gfx` |
+| GFX Studio 2.0 (35 presets, auto-fit titles, clay/wire/density/UV modes, stats, auto showcase) | `Train/GfxTrain/TRAIN.md`, `docs/STUDIOS.md` | ✧ GFX Studio, `npm run gfx -- <slug> --preset showcase` |
 | Simulator models (pets, eggs, tools), model packs | `Train/StudGradientModelKarisik/TRAIN.md` | `projects/cube-pet.js`, `projects/sim-egg.js` |
 | PBR textures written by the AI | `Train/TextureTrainSenTrainleBurada/TRAIN.md` | `k.pbrSurface(def)`, `k.paint({painter})`, `npm run texture` |
+| Texture Studio (node graphs → multi-engine PBR) | `docs/STUDIOS.md` | `/texture`, `textures/<name>.graph.json`, `npm run texture -- <graph> --profile …` |
+| Roblox VFX (imported VFX packs, own flipbooks, Luau/RBXM export) | `Train/VfxTrain/TRAIN.md` | `/vfx`, `vfx/<id>.vfx.json`, `npm run vfx` |
 | Topology (context-aware smart topology + SIMP) | `Train/TopologyTrain/TRAIN.md` | `k.smartTopology(intent)`, `k.topologyPart` |
 | Reference sorting | `Train/catalog.json` | — |
 

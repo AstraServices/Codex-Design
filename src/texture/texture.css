@@ -1,0 +1,41 @@
+/* Texture Studio: node graph canvas, node cards, map strip, 3D view. Same palette as the workshop. */
+.tex-studio{grid-template-columns:240px minmax(360px,1fr) 330px}
+.graph{flex:1;min-height:0;position:relative;overflow:hidden;background:#121512;background-image:radial-gradient(#283026 1px,transparent 1px);background-size:22px 22px;cursor:grab}
+.graph.panning{cursor:grabbing}
+.graph-world{position:absolute;left:0;top:0;transform-origin:0 0}
+#wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+#wires path{fill:none;stroke:#8fa877;stroke-width:2}
+#wires path.live{stroke:var(--lime);stroke-dasharray:5 4}
+.node{position:absolute;width:168px;background:#1b201b;border:1px solid #3a4139;border-radius:8px;font-size:9.5px;box-shadow:0 6px 18px #0006;user-select:none}
+.node.selected{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime),0 6px 18px #0008}
+.node.output-node{border-color:#6f8455}
+.node header{all:unset;display:flex;gap:6px;align-items:center;padding:6px 8px;border-bottom:1px solid #2d342c;cursor:move;border-radius:8px 8px 0 0;background:#222822}
+.node header b{font-weight:600;color:#dfe8d6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.node header small{color:#7c8b71;font:8px ui-monospace,monospace}
+.node .ports{display:flex;justify-content:space-between;padding:5px 0;gap:4px}
+.node .ins,.node .outs{display:grid;gap:4px}
+.node .port{display:flex;align-items:center;gap:5px;color:#a7b29c;cursor:crosshair}
+.node .ins .port{margin-left:-6px}
+.node .outs .port{margin-right:-6px;flex-direction:row-reverse}
+.node .dot{width:11px;height:11px;border-radius:50%;border:2px solid #8fa877;background:#151815;flex-shrink:0}
+.node .port.connected .dot,.node .outs .dot{background:#8fa877}
+.node canvas{display:block;width:72px;height:72px;margin:0 auto 7px;border-radius:4px;image-rendering:pixelated;background:#0e100e}
+.node .tags{display:flex;gap:3px;flex-wrap:wrap;padding:0 8px 7px}
+.node .tags span{font:700 7px ui-monospace,monospace;color:#28301c;background:var(--lime);border-radius:3px;padding:1px 4px}
+#palette{display:grid;gap:3px;margin-top:8px}
+#palette .cat{font-size:8px;letter-spacing:1.4px;color:#7c8b71;margin:9px 0 2px;font-weight:700}
+#palette button{text-align:left;font-size:10px;padding:6px 8px;background:transparent;border-color:transparent}
+#palette button:hover{background:#252a25;border-color:#3a4139}
+.maps-strip{display:flex;gap:6px;padding:8px 12px;border-top:1px solid var(--line);overflow-x:auto;flex-shrink:0}
+.maps-strip button{padding:4px;display:grid;gap:3px;font-size:8px;min-width:76px;background:#1b201b}
+.maps-strip button[aria-pressed=true]{border-color:var(--lime)}
+.maps-strip canvas{width:68px;height:68px;border-radius:3px;image-rendering:pixelated}
+.maps-strip button small{color:#7c8b71}
+.view3d{aspect-ratio:1;border-radius:8px;overflow:hidden;position:relative;background:#141814}
+.view3d canvas{display:block;width:100%;height:100%}
+.view3d.painting canvas{cursor:crosshair}
+.out-row{display:grid;grid-template-columns:76px 1fr;gap:6px;align-items:center;margin-top:5px;font-size:9.5px;color:#a7b29c}
+.out-row select{font-size:9.5px;padding:5px}
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.profile-grid label{display:flex;gap:6px;align-items:center;font-size:10px;color:#c4cdb9;padding:6px;border:1px solid #2e352d;border-radius:6px}
+@media(max-width:1000px){.tex-studio{grid-template-columns:minmax(0,1fr)}.graph{height:60vh}}

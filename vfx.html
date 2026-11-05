@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Codex Design · VFX Studio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23d5ecab' d='M16 1 30 9v15l-14 7L2 24V9z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/src/style.css"><link rel="stylesheet" href="/src/studio/shell.css">
+  <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/","fflate":"/node_modules/fflate/esm/browser.js"}}</script>
+</head>
+<body>
+  <header><a class="brand" href="/">⌘ <strong>codex</strong><span>design</span><i>VFX</i></a><span class="grow"></span><button id="new-effect">＋ New effect</button><button id="save" title="Save (Ctrl+S)">Save</button><button id="export-open" class="primary">↓ Export to Roblox</button></header>
+  <main class="studio">
+    <aside class="left">
+      <div class="eyebrow">ROBLOX VFX STUDIO <span>ROBLOX-ONLY</span></div>
+      <h1>Effects that run<br>in Roblox, natively.</h1>
+      <p class="muted">ParticleEmitter · Beam · Trail · Lights · Parts.<br>Three.js only previews; exports are Roblox files.</p>
+      <section class="panel"><div class="section-label">EFFECTS <span id="fx-count"></span></div><div id="fx-list"></div></section>
+      <section class="panel"><div class="section-label">VFX LIBRARY <span id="lib-count"></span></div>
+        <input id="lib-search" type="search" placeholder="Search fire, impact, portal, smoke…" aria-label="Search the VFX library" style="margin-top:9px">
+        <div class="chips" id="lib-tags"></div>
+        <div class="row" style="margin-top:8px"><label class="fine check"><input type="checkbox" id="lib-particles"> Single particle textures</label></div>
+        <div class="tile-grid" id="lib-grid"></div>
+        <p class="fine" id="lib-note">Click a tile to add it as an emitter layer. Licenses are shown per item; unknown licenses are flagged.</p>
+      </section>
+      <section class="panel"><div class="section-label">DRAW YOUR OWN <span>AI FALLBACK</span></div>
+        <p class="fine">When nothing in the library fits (style, license, resolution, flipbook), generate original Roblox-ready art.</p>
+        <label class="field">Kind<select id="gen-kind"></select></label>
+        <div class="row"><label class="field grow">Color<input id="gen-color" type="color" value="#ffffff"></label><label class="field grow">Flipbook<select id="gen-grid"><option value="0">Single 256</option><option value="4">Grid4x4</option><option value="8">Grid8x8</option></select></label><label class="field grow">Seed<input id="gen-seed" type="number" value="1" min="1"></label></div>
+        <label class="field">Softness <output id="gen-soft-v">0.5</output><input id="gen-soft" type="range" min="0" max="1" step="0.05" value="0.5"></label>
+        <canvas id="gen-preview" width="128" height="128" style="width:100%;aspect-ratio:1;border-radius:6px;margin-top:8px;background:repeating-conic-gradient(#151815 0 25%,#1e221e 0 50%) 0 0/12px 12px"></canvas>
+        <button id="gen-add" class="full">＋ Add generated layer</button>
+      </section>
+    </aside>
+    <section class="stage">
+      <div class="stage-bar"><span class="title" id="fx-title">VFX Studio</span>
+        <button id="play" aria-label="Play or pause">Ⅱ</button><button id="restart" title="Replay (R)">↺</button>
+        <label class="fine check"><input type="checkbox" id="loop" checked> Loop</label>
+        <label class="fine check"><input type="checkbox" id="motion"> Move (trails)</label>
+        <label class="fine check"><input type="checkbox" id="dummy" checked> Scale dummy</label>
+        <select id="speed" aria-label="Playback speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select>
+        <select id="quality" aria-label="Quality"><option value="1">High</option><option value="0.65">Medium</option><option value="0.35">Low (mobile)</option></select>
+        <label class="fine">Scale <input id="scale" type="number" value="1" min="0.1" max="10" step="0.1" style="width:56px"></label>
+      </div>
+      <div class="canvas-host" id="viewport"><div class="hud" id="hud"></div></div>
+      <div class="timeline-bar"><input id="scrub" type="range" min="0" max="1" step="0.001" value="0" aria-label="Effect timeline"><output id="time">0.00 s</output></div>
+    </section>
+    <aside class="right">
+      <section class="panel"><div class="section-label">EFFECT <span id="fx-id"></span></div>
+        <label class="field">Name (VFX.Play name)<input id="fx-name" type="text"></label>
+        <label class="field">Description<textarea id="fx-desc" rows="2"></textarea></label>
+        <div class="row"><label class="field grow">Duration (s)<input id="fx-duration" type="number" min="0" step="0.05"></label><label class="field check" style="margin-top:22px"><input type="checkbox" id="fx-loop"> Looping effect</label></div>
+      </section>
+      <section class="panel"><div class="section-label">LAYERS <span id="layer-count"></span></div>
+        <div class="chips" id="add-layer"></div><div id="layers"></div></section>
+      <section class="panel"><div class="section-label">ROBLOX VALIDATOR <span id="val-summary"></span></div><div class="issues" id="issues"></div></section>
+      <section class="panel"><div class="section-label">ASSET IDS <span id="ids-summary"></span></div>
+        <div id="ids" class="issues"></div>
+        <div class="row" style="margin-top:8px"><button id="upload" class="grow">⇪ Upload textures to Roblox</button><button id="ids-edit" title="Paste ids you uploaded yourself">✎ Set id</button></div>
+        <p class="fine">Uploads use your Open Cloud key (Settings). Decal → image ids are resolved automatically when Roblox allows it; otherwise the package's Studio importer resolves them.</p>
+      </section>
+      <section class="panel"><div class="section-label">EFFECT JSON <span>AI-EDITABLE</span></div>
+        <textarea id="json" class="code" rows="10" spellcheck="false"></textarea><button id="json-apply" class="full">Apply JSON</button></section>
+    </aside>
+  </main>
+  <footer><span><span class="live-dot"></span> <span id="status" role="status">Loading VFX Studio</span></span><span>STUDS · ROBLOX ENGINE</span><span>CODEX DESIGN / VFX STUDIO</span></footer>
+  <dialog id="export-dialog" class="dialog"><form method="dialog"><div class="section-label">EXPORT TO ROBLOX <span id="ex-name"></span></div>
+    <div class="issues" id="ex-issues"></div>
+    <div class="panel" id="ex-roblox"><div class="section-label">ROBLOX UPLOAD <span id="ex-key-state"></span></div>
+      <p class="fine">Creator Dashboard → Credentials → API key with <b>asset:read + asset:write</b>. Flipbooks and textures are uploaded to your account, their ids are written into the Luau CONFIG, the .rbxm and the asset map, then the ZIP is built.</p>
+      <div class="row"><input id="ex-key" type="password" class="grow" placeholder="Open Cloud API key (saved locally, write-only)" autocomplete="off"><select id="ex-creatorType"><option value="user">User</option><option value="group">Group</option></select><input id="ex-creatorId" type="text" inputmode="numeric" placeholder="Creator ID" style="width:110px"></div>
+      <button type="button" id="ex-oneclick" class="primary full">⇪ Upload flipbooks/textures → write IDs into Luau → build ZIP</button></div>
+    <label class="field check"><input type="checkbox" id="ex-rbxm" checked> .rbxm (binary model)</label>
+    <label class="field check"><input type="checkbox" id="ex-rbxmx" checked> .rbxmx (XML model)</label>
+    <label class="field check"><input type="checkbox" id="ex-gen" checked> <b>Luau code</b> (one ModuleScript: CONFIG table with texture ids + builds the same effect + VFX API, no file import needed)</label>
+    <label class="field check"><input type="checkbox" id="ex-luau" checked> VFXStudio.luau runtime controller + Studio importer (for the .rbxm package)</label>
+    <label class="field check"><input type="checkbox" id="ex-tex" checked> Textures (PNG) + manifest.json + effect JSON</label>
+    <label class="field check"><input type="checkbox" id="ex-all"> Package every effect in vfx/ (one CodexVFX folder)</label>
+    <label class="field check"><input type="checkbox" id="ex-placeholder"> Export even with missing asset ids (placeholders + importer resolves them)</label>
+    <p class="fine">Put the CodexVFX folder in ReplicatedStorage, then <span class="mono">require(ReplicatedStorage.CodexVFX.VFXStudio).Play("Name", {Position = …})</span>.</p>
+    <div class="actions"><span id="ex-status" class="fine grow"></span><button value="cancel">Close</button><button type="button" id="ex-copy">⧉ Copy Luau</button><button type="button" id="ex-go" class="primary">↓ Export ZIP</button></div></form></dialog>
+  <script type="module" src="/src/vfx/app.js"></script>
+</body></html>

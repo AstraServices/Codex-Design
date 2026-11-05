@@ -1,3 +1,4 @@
+import { markPNG } from './watermark.js';
 // Minimal PNG → RGBA decoder for Node-side builds (inspect/tests). Browsers decode images natively.
 // Supports 8/16-bit grayscale, RGB, palette (1–8 bit), gray+alpha and RGBA, non-interlaced.
 export function decodePNG(bytes,inflate) {
@@ -49,5 +50,5 @@ export function encodePNG(rgba,width,height,deflate,{flipY=false}={}) {
   const chunk=(name,data)=>{const out=new Uint8Array(12+data.length),view=new DataView(out.buffer);view.setUint32(0,data.length);for(let i=0;i<4;i++)out[4+i]=name.charCodeAt(i);out.set(data,8);view.setUint32(8+data.length,crc(out.subarray(4,8+data.length)));return out;};
   const ihdr=new Uint8Array(13),hv=new DataView(ihdr.buffer);hv.setUint32(0,width);hv.setUint32(4,height);ihdr.set([8,6,0,0,0],8);
   const parts=[new Uint8Array([137,80,78,71,13,10,26,10]),chunk('IHDR',ihdr),chunk('IDAT',new Uint8Array(deflate(raw))),chunk('IEND',new Uint8Array(0))];
-  const total=parts.reduce((n,p)=>n+p.length,0),png=new Uint8Array(total);let o=0;for(const p of parts){png.set(p,o);o+=p.length;}return png;
+  const total=parts.reduce((n,p)=>n+p.length,0),png=new Uint8Array(total);let o=0;for(const p of parts){png.set(p,o);o+=p.length;}return markPNG(png);
 }

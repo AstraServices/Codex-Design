@@ -6,6 +6,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23d5ecab' d='M16 1 30 9v15l-14 7L2 24V9z'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="/src/style.css">
   <link rel="stylesheet" href="/src/layout.css">
+  <link rel="stylesheet" href="/src/studio/shell.css">
   <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/webgpu":"/node_modules/three/build/three.webgpu.js","three/addons/":"/node_modules/three/examples/jsm/","three-bvh-csg":"/node_modules/three-bvh-csg/src/index.js","three-mesh-bvh":"/node_modules/three-mesh-bvh/src/index.js","fflate":"/node_modules/fflate/esm/browser.js","meshoptimizer/simplifier":"/node_modules/meshoptimizer/meshopt_simplifier.js"}}</script>
 </head>
 <body>
@@ -35,6 +36,7 @@
     <details open><summary>Preset &amp; text</summary><div class="gfx-grid">
       <label>Preset<select id="gfx-preset"></select></label><label>Angle<select id="gfx-angle"><option value="three-quarter">Three-quarter</option><option value="iso">Isometric</option><option value="hero">Hero</option><option value="front">Front</option><option value="side">Side</option><option value="back">Back</option><option value="top">Top</option><option value="low">Low</option></select></label>
       <label>Title<input id="gfx-title" placeholder="Model name"></label><label>Tag<input id="gfx-tag" placeholder="NEW"></label><label>Eyebrow / subtitle<input id="gfx-subtitle" placeholder="Collection · 24 items"></label><label>Footer<input id="gfx-footer" placeholder="Your studio"></label>
+      <label>Title size <output data-for="gfx-titleScale"></output><input id="gfx-titleScale" type="range" min="0.4" max="1.8" step="0.05" value="1"></label><label>Long titles<select id="gfx-titleFit"><option value="auto">Auto fit (shrink → 2 lines)</option><option value="shrink">Shrink to fit</option><option value="wrap">Wrap to 2 lines</option><option value="off">Fixed size</option></select></label>
       <label>Accent<input id="gfx-accent" type="color" value="#2f7d9a"></label><label>Rarity<select id="gfx-rarity"><option>common</option><option>uncommon</option><option>rare</option><option>epic</option><option selected>legendary</option><option>mythic</option><option>secret</option></select></label></div></details>
     <details><summary>Layout &amp; background</summary><div class="gfx-grid">
       <label>Model size <output data-for="gfx-fill"></output><input id="gfx-fill" type="range" min="0.2" max="1" step="0.01"></label><label>Offset X <output data-for="gfx-offsetX"></output><input id="gfx-offsetX" type="range" min="-0.4" max="0.4" step="0.01"></label>
@@ -46,6 +48,16 @@
       <label>Photo fit<select id="bg-photo-fit"><option value="cover">Cover</option><option value="contain">Contain</option></select></label><label>Photo zoom <output data-for="bg-photo-zoom"></output><input id="bg-photo-zoom" type="range" min="0.5" max="3" step="0.05" value="1"></label>
       <label>Photo blur <output data-for="bg-photo-blur"></output><input id="bg-photo-blur" type="range" min="0" max="40" step="1" value="0"></label><label>Photo darken <output data-for="bg-photo-darken"></output><input id="bg-photo-darken" type="range" min="0" max="0.9" step="0.05" value="0"></label>
       <label class="gfx-check"><input id="gfx-outline" type="checkbox"> Sticker outline (only if you want it)</label></div></details>
+    <details><summary>Render mode &amp; inspection (2.0)</summary><div class="gfx-grid">
+      <label>Render mode<select id="gfx-renderMode"><option value="">Preset</option><option value="beauty">Beauty (PBR)</option><option value="pathtrace">Ray traced (path tracer: GI, reflections, soft shadows)</option><option value="clay">Clay</option><option value="matcap">Matcap</option><option value="normal">Normals</option><option value="wireframe">Wireframe</option><option value="wire-overlay">Solid + wireframe</option><option value="density">Triangle density heatmap</option><option value="uv">UV checker</option><option value="roughness">Roughness</option><option value="metalness">Metalness</option><option value="emissive">Emissive only</option><option value="depth">Depth pass</option></select></label>
+      <label>Exploded view <output data-for="gfx-explode"></output><input id="gfx-explode" type="range" min="0" max="2" step="0.05" value="0"></label>
+      <label>Ray-trace samples <output data-for="gfx-spp"></output><input id="gfx-spp" type="range" min="4" max="256" step="4" value="32"></label>
+      <label class="gfx-check"><input id="gfx-stats" type="checkbox"> Mesh statistics panel (tris, verts, materials, draw calls, GPU MB)</label>
+      <label class="gfx-check"><input id="gfx-skeleton" type="checkbox"> Skeleton / bone overlay</label>
+      <label class="gfx-check"><input id="gfx-autoangle" type="checkbox"> Automatic best angle</label>
+      <label>Output size<select id="gfx-scale"><option value="1">Preset size</option><option value="2">2× (≈4K)</option><option value="4">4× (≈8K)</option></select></label>
+      <label>File format<select id="gfx-format"><option value="png">PNG (transparent ok)</option><option value="webp">WebP</option><option value="jpeg">JPEG</option><option value="exr">EXR (HDR beauty pass, linear + alpha)</option></select></label>
+      <div class="gfx-actions"><button type="button" id="gfx-showcase" class="primary">✦ Auto showcase (beauty · clay · wire · topology · breakdown)</button></div><p class="fine" id="gfx-showcase-status"></p></div></details>
     <details><summary>Watermark</summary><div class="gfx-grid">
       <label class="gfx-check"><input id="wm-on" type="checkbox"> Watermark on</label><label>Text<input id="wm-text" placeholder="© Your Studio"></label>
       <label>Position<select id="wm-position"><option>top-left</option><option>top</option><option>top-right</option><option>left</option><option>center</option><option>right</option><option>bottom-left</option><option>bottom</option><option selected>bottom-right</option></select></label>
@@ -70,4 +82,5 @@
     <div class="gfx-actions"><button type="button" id="update-later">Later</button><button type="button" id="update-go" class="primary">↓ Download update</button></div></form></dialog>
   <script type="module" src="/src/app.js"></script>
   <script type="module" src="/src/app-update.js"></script>
+  <script type="module">import { mountShell } from "/src/studio/shell.js"; mountShell({ current: "WORKSHOP" });</script>
 </body></html>

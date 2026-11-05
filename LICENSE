@@ -1,0 +1,40 @@
+Codex Design Non-Commercial License
+Copyright (c) 2026 AstraServices. All rights reserved.
+
+"Software" means Codex Design: its source code, studios (3D Workshop, Texture Studio, VFX Studio, GFX Studio),
+SDK, scripts, documentation, training material and bundled libraries authored by AstraServices.
+"Outputs" means anything produced with the Software: models, textures, materials, VFX packages, Luau code,
+images, videos, renders and other exported files.
+
+1. Permitted use. You may download, install and run the Software for personal, educational, evaluation and other
+   non-commercial purposes.
+
+2. No modification or redistribution without permission. Without prior written permission from AstraServices you
+   may not:
+   a) modify, translate, adapt or create derivative works of the source code;
+   b) publish, redistribute, sublicense, sell, rent or host the Software or modified versions of it, in whole or
+      in part, including forks published to public repositories or package registries;
+   c) remove or alter copyright notices, this license, or the provenance metadata the Software embeds in Outputs.
+
+3. No commercial use without permission. Without prior written permission from AstraServices, neither the
+   Software nor its Outputs may be used commercially. Commercial use includes, among others: selling or licensing
+   Outputs, using Outputs in a monetized game or experience (for example Roblox experiences with paid items,
+   game passes, developer products or ads), asset stores, client or contract work, and paid services built on
+   the Software.
+
+4. Provenance. Outputs carry machine-readable provenance metadata (for example PNG text chunks, glTF/GLB asset
+   fields, EXR header attributes, Roblox file comments and manifests, Luau headers) and export file names may
+   contain "_CodexDesign". This metadata identifies Outputs as made with Codex Design and must be kept.
+
+5. Third-party material. Bundled third-party assets (icon packs, VFX packs and others under assets/) remain
+   under their own licenses, which are listed with them. This license does not grant rights the third parties did
+   not grant, and their terms apply in addition to this one.
+
+6. Permission requests. Requests for commercial use, modification or redistribution:
+   https://github.com/AstraServices/Codex-Design (open an issue or contact the owner).
+
+7. No warranty. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE
+   FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS OUTPUTS.
+
+8. Termination. Any use outside these terms ends your permission to use the Software automatically.

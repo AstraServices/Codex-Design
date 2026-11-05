@@ -1,11 +1,11 @@
 {
   "name": "codex-design-3d",
-  "version": "0.7.0",
+  "version": "0.8.1",
   "description": "Local procedural 3D modeling, rigging and animation workshop for Codex",
   "scripts": {
     "start": "node server.mjs",
     "dev": "node server.mjs",
-    "test": "node --test tests/engine.test.mjs tests/roblox.test.mjs tests/roblox-export.test.mjs tests/lod.test.mjs tests/train.test.mjs",
+    "test": "node --test tests/engine.test.mjs tests/roblox.test.mjs tests/roblox-export.test.mjs tests/lod.test.mjs tests/train.test.mjs tests/studios.test.mjs",
     "test:browser": "playwright test",
     "export": "node scripts/export.mjs",
     "inspect": "node scripts/inspect.mjs",
@@ -17,11 +17,15 @@
     "gfx": "node scripts/gfx.mjs",
     "texture": "node scripts/texture.mjs",
     "verify:roblox": "node scripts/verify-roblox.mjs",
-    "update": "node scripts/update.mjs"
+    "update": "node scripts/update.mjs",
+    "vfx": "node scripts/vfx.mjs",
+    "codex": "node scripts/codex.mjs",
+    "vfx:import": "python scripts/vfx_import.py",
+    "roblox:upload": "node scripts/roblox-upload.mjs"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "dependencies": {
     "fflate": "^0.8.3",
