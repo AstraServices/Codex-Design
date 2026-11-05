@@ -1,4 +1,4 @@
-﻿Codex Design - Copyright Notice and Non-Commercial License (v1.2)
+﻿Codex Design - Copyright Notice and Non-Commercial License (v1.3)
 Copyright (c) 2026 AstraServices. All rights reserved.
 
 PART A - COPYRIGHT NOTICE
@@ -19,6 +19,14 @@ A5. "Codex Design" and the associated names and logos identify AstraServices' wo
 A6. Any use beyond Part B, in particular copying, modifying, redistributing or commercially exploiting the
     Software without written permission, infringes AstraServices' copyright and may result in civil and criminal
     liability under applicable law.
+A7. Outputs. Assets produced with the Software, and assets modified with the Software, contain or are derived from
+    copyrighted material of AstraServices (code-generated geometry, procedural recipes, textures, materials, VFX
+    data, generated Luau code, templates and other parts of the Software). Using such Outputs, or modified versions
+    of them, beyond the rights granted in Part B (in particular Commercial Use without written permission, resale,
+    redistribution as asset packs, or removing provenance metadata to hide their origin) is a breach of this license
+    and also an infringement of AstraServices' copyright in that material, with the consequences described in A6.
+    This applies regardless of how much the Output was edited afterwards, as long as material of the Software
+    remains in it.
 
 PART B - LICENSE
 
