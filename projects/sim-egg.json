@@ -1,9 +1,0 @@
-{
-  "name": "SIM EGG / themed simulator egg",
-  "description": "Ovoid egg · surface written per theme with the painter (lava cracks, galaxy, crystal) · static",
-  "module": "sim-egg.js",
-  "lighting": "studio",
-  "parameters": { "radius": 0.6, "theme": "lava" },
-  "controls": { "radius": { "label": "Radius (m)", "type": "number", "min": 0.3, "max": 1.2, "step": 0.05 } },
-  "gfx": { "preset": "icon-rarity", "title": "Lava Egg", "rarity": "mythic" }
-}

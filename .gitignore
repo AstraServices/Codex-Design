@@ -8,3 +8,5 @@ work/
 outputs/
 codex.settings.json
 codex.settings.json.tmp
+projects/*
+!projects/.gitkeep

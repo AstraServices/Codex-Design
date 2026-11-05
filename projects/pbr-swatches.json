@@ -1,8 +1,0 @@
-{
-  "name": "PBR SWATCHES / procedural textures",
-  "description": "13 tileable PBR sets · albedo, normal, roughness, metalness, AO · npm run texture -- <preset> --size 4096",
-  "module": "pbr-swatches.js",
-  "lighting": "studio",
-  "parameters": { "resolution": 256 },
-  "controls": { "resolution": { "label": "Preview resolution", "type": "number", "min": 128, "max": 1024, "step": 128 } }
-}

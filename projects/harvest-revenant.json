@@ -1,9 +1,0 @@
-{
-  "name": "Harvest Revenant — Pumpkin Guardian",
-  "description": "Reference-driven pumpkin-headed wooden guardian; sculpted ribbed shell, carved luminous face, torn leaf mantle, thorned vines, articulated gilded claws. Complete skeletal motion library.",
-  "module": "harvest-revenant.js",
-  "parameters": {"ember": 2.6},
-  "controls": {"ember": {"type":"number","label":"Pumpkin ember intensity","min":0.5,"max":5,"step":0.1}},
-  "lighting": "dramatic",
-  "gfx": {"preset":"card-dark","bg":{"type":"radial","colors":["#433425","#161510","#080a08"]},"glow":null,"fill":0.80,"offsetY":0,"floatShadow":0.25,"float":0,"title":"HARVEST REVENANT","subtitle":"WOOD • VINE • EMBER","tag":"RIGGED CHARACTER","footer":"71 JOINTS / 27 ANIMATION CLIPS","watermark":{"text":"CODEX DESIGN 3D","position":"bottom-right","opacity":0.28,"size":0.013}}
-}

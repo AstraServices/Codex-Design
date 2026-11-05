@@ -1,8 +1,0 @@
-{
-  "name": "HARVESTER / The Hollow Warden",
-  "description": "Reference-inspired pumpkin revenant · carved lantern head · bark, torn leaves, articulated gold claws, vines and Seeker · 18 animation clips",
-  "module": "harvester.js",
-  "lighting": "studio",
-  "parameters": {"lantern": 2.4},
-  "controls": {"lantern":{"type":"number","label":"Lantern intensity","min":0,"max":5,"step":0.1}}
-}
